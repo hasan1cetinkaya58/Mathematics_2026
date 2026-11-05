@@ -1,44 +1,34 @@
-Exercise 2. Determinant of a 3×3 Matrix
+# Determinants – Exercise 2
+
+## Exercise 2. Determinant of a 3×3 Matrix
 
 Given:
 
-A=\begin{pmatrix}
-1&2&-1\\
-0&3&4\\
-2&1&5
-\end{pmatrix}
+$$A=\begin{pmatrix}1&2&-1\\0&3&4\\2&1&5\end{pmatrix}$$
 
-Using Sarrus’ rule:
+We will use Sarrus' rule.
 
-\det(A)=
-1(3)(5)+2(4)(2)+(-1)(0)(1)
+### Step 1: Repeat the first two columns.
 
-- [(-1)(3)(2)+2(0)(5)+1(4)(1)]
+$$\begin{array}{ccc|cc}1&2&-1&1&2\\0&3&4&0&3\\2&1&5&2&1\end{array}$$
 
-=15+16-(-6+4)
+### Step 2: Add the downward diagonal products.
 
-=31-(-2)
+$$1\cdot3\cdot5+2\cdot4\cdot2+(-1)\cdot0\cdot1=15+16+0=31$$
 
-\boxed{\det(A)=33}
+### Step 3: Add the upward diagonal products.
 
-Check:
+$$(-1)\cdot3\cdot2+2\cdot0\cdot5+1\cdot4\cdot1=-6+0+4=-2$$
 
-Perform the row operation:
+### Step 4: Subtract the upward sum from the downward sum.
 
-R_3\leftarrow R_3-2R_1
+$$\det(A)=31-(-2)=\boxed{33}$$
 
-The determinant does not change.
+### Step 5: Check using cofactor expansion along the first row.
 
-\begin{pmatrix}
-1&2&-1\\
-0&3&4\\
-0&-3&7
-\end{pmatrix}
+$$\det(A)=1(15-4)-2(0-8)+(-1)(0-6)$$ $$=11+16+6=\boxed{33}$$
 
-Expanding along the first column:
 
-\det(A)=1(3\cdot7-4(-3))
 
-=21+12=\boxed{33}
+------------------------------------------------------------------------
 
-Both methods give the same result.
