@@ -1,25 +1,30 @@
-Exercise 1. Determinant of a 2×2 Matrix
+# Determinants – Exercise 1
 
-For a 2×2 matrix, the determinant is calculated as:
+## Exercise 1. Determinant of a 2×2 Matrix
 
-\det(A)=ad-bc
+Given:
 
-First matrix:
+$$A=\begin{pmatrix}3&-2\\5&4\end{pmatrix},\qquad B=\begin{pmatrix}1&7\\2&14\end{pmatrix}$$
 
-A=\begin{pmatrix}3&-2\\5&4\end{pmatrix}
+### Step 1: Use the 2×2 determinant formula.
 
-\det(A)=3(4)-(-2)(5)
+For $\begin{pmatrix}a&b\\c&d\end{pmatrix}$, $\det(A)=ad-bc$.
 
-=12+10=\boxed{22}
+### Step 2: Calculate the determinant of A.
 
-Second matrix:
+$$\det(A)=3\cdot4-(-2)\cdot5=12+10$$ $$\boxed{\det(A)=22}$$
 
-B=\begin{pmatrix}1&7\\2&14\end{pmatrix}
+### Step 3: Calculate the determinant of B.
 
-\det(B)=1(14)-7(2)
+$$\det(B)=1\cdot14-7\cdot2=14-14$$ $$\boxed{\det(B)=0}$$
 
-=14-14=\boxed{0}
+### Step 4: Determine which matrix is invertible.
 
-A matrix is invertible if its determinant is not zero.
+A square matrix is invertible if and only if its determinant is
+non-zero. Since $\det(A)=22\neq0$, A is invertible. Since $\det(B)=0$, B
+is not invertible.
 
-Therefore, matrix A is invertible, while matrix B is not invertible.
+**Final Answer:** A is invertible; B is not invertible.
+
+------------------------------------------------------------------------
+
