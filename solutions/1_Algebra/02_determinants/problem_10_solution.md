@@ -1,36 +1,81 @@
-# Determinants – Exercise 10
 
-## Exercise 10. Detecting Dependence
+# Exercise 10 – Detecting Dependence
 
-Given:
+## 1. Given Matrix
 
-$$A=\begin{pmatrix}1&2&3\\2&4&6\\0&1&5\end{pmatrix}$$
+The determinant is given as:
 
-We need to explain why the determinant is zero without a full
-calculation.
+$$
+\det(A)=
+\det\begin{pmatrix}
+1 & 2 & 3\\
+2 & 4 & 6\\
+0 & 1 & 5
+\end{pmatrix}
+$$
 
-### Step 1: Compare the first and second rows.
+We are asked to explain why the determinant is zero without carrying out a full determinant calculation.
 
-$$R_1=(1,2,3),\qquad R_2=(2,4,6)$$
+## 2. Identify the Dependence Between the Rows
 
-We can see that:
+Consider the first and second rows:
 
-$$R_2=2R_1$$
+$$
+R_1=(1,2,3)
+$$
 
-### Step 2: Apply the determinant property.
+$$
+R_2=(2,4,6)
+$$
 
-If one row is a multiple of another row, the rows are linearly dependent
-and the determinant is zero.
+We can see that the second row is exactly twice the first row:
 
-$$\boxed{\det(A)=0}$$
+$$
+R_2=2R_1
+$$
 
-### Step 3: Explain invertibility.
+Therefore, the rows are linearly dependent.
 
-A square matrix with determinant zero is not invertible.
+## 3. Why Does This Make the Determinant Zero?
 
+A fundamental property of determinants states that if two rows of a square matrix are linearly dependent, its determinant must be zero.
 
+In this matrix, the second row is a multiple of the first row. Therefore, the rows do not provide three independent directions.
 
-------------------------------------------------------------------------
+Consequently:
 
+$$
+\det(A)=0
+$$
 
+## 4. Connection with Noninvertibility
 
+A square matrix is invertible if and only if its determinant is nonzero.
+
+Since:
+
+$$
+\det(A)=0
+$$
+
+the matrix is not invertible.
+
+This means that the matrix has no inverse.
+
+## 5. Final Conclusion
+
+The determinant is zero because the second row is twice the first row:
+
+$$
+R_2=2R_1
+$$
+
+This makes the rows linearly dependent. Therefore, the determinant is zero, and the matrix is not invertible.
+
+**Final Answer:**
+
+$$
+\boxed{\det(A)=0}
+$$
+
+The matrix is singular (not invertible) because its rows are linearly dependent.
