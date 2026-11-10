@@ -1,34 +1,142 @@
-# Determinants – Exercise 7
 
-## Exercise 7. Using Properties Instead of Recomputing
+# Exercise 7: Using Properties Instead of Recomputing
 
-Given that A is a 3×3 matrix and $\det(A)=-4$.
+## Question
 
-### 1. Calculate $\det(2A)$.
+Suppose that for a $3\times3$ matrix:
 
-For an $n\times n$ matrix, $\det(kA)=k^n\det(A)$. Since $n=3$:
+$$
+\det(A)=-4
+$$
 
-$$\det(2A)=2^3\cdot(-4)=8\cdot(-4)=\boxed{-32}$$
+Compute:
 
-### 2. Calculate $\det(A^T)$.
+$$
+\det(2A),\quad \det(A^T),\quad \det(A^2),\quad \det(-A)
+$$
 
-The determinant of a transpose is unchanged.
+Justify each answer using the appropriate determinant property.
 
-$$\det(A^T)=\det(A)=\boxed{-4}$$
+## Solution
 
-### 3. Calculate $\det(A^2)$.
+### 1. Calculate det(2A)
 
-Using the product property:
+For an $n\times n$ matrix, multiplying the entire matrix by a scalar $k$ multiplies its determinant by $k^n$.
 
-$$\det(A^2)=\det(A)\det(A)=(-4)(-4)=\boxed{16}$$
+Since $A$ is a $3\times3$ matrix:
 
-### 4. Calculate $\det(-A)$.
+$$
+\det(kA)=k^3\det(A)
+$$
 
-$$\det(-A)=(-1)^3\det(A)=(-1)(-4)=\boxed{4}$$
+For $k=2$:
 
-**Final Answers:**
+$$
+\det(2A)=2^3\det(A)
+$$
 
-$$\boxed{\det(2A)=-32,\quad\det(A^T)=-4,\quad\det(A^2)=16,\quad\det(-A)=4}$$
+Substituting the given determinant:
 
-------------------------------------------------------------------------
+$$
+\det(2A)=8\cdot(-4)
+$$
 
+Therefore:
+
+$$
+\boxed{\det(2A)=-32}
+$$
+
+### 2. Calculate det(A^T)
+
+The determinant of a matrix is equal to the determinant of its transpose.
+
+The property is:
+
+$$
+\det(A^T)=\det(A)
+$$
+
+Since:
+
+$$
+\det(A)=-4
+$$
+
+Therefore:
+
+$$
+\boxed{\det(A^T)=-4}
+$$
+
+### 3. Calculate det(A^2)
+
+The determinant of a product of two square matrices is equal to the product of their determinants.
+
+The property is:
+
+$$
+\det(AB)=\det(A)\det(B)
+$$
+
+Since $A^2=A\cdot A$:
+
+$$
+\det(A^2)=\det(A)\cdot\det(A)
+$$
+
+Substituting the given value:
+
+$$
+\det(A^2)=(-4)\cdot(-4)
+$$
+
+Therefore:
+
+$$
+\boxed{\det(A^2)=16}
+$$
+
+### 4. Calculate det(-A)
+
+Multiplying a $3\times3$ matrix by $-1$ multiplies its determinant by $(-1)^3$.
+
+Using the scalar multiplication property:
+
+$$
+\det(-A)=(-1)^3\det(A)
+$$
+
+Substituting the given value:
+
+$$
+\det(-A)=(-1)\cdot(-4)
+$$
+
+Therefore:
+
+$$
+\boxed{\det(-A)=4}
+$$
+
+### 5. Final Conclusion
+
+Using the properties of determinants, we obtain:
+
+$$
+\boxed{\det(2A)=-32}
+$$
+
+$$
+\boxed{\det(A^T)=-4}
+$$
+
+$$
+\boxed{\det(A^2)=16}
+$$
+
+$$
+\boxed{\det(-A)=4}
+$$
+
+These results demonstrate that determinant properties allow us to calculate the determinants of transformed matrices without performing a complete determinant expansion.
