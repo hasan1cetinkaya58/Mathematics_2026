@@ -1,36 +1,203 @@
-# Determinants – Exercise 9
 
-## Exercise 9. Area and the Determinant
+# Exercise 9: Area and the Determinant
 
-Given the vectors:
+## Question
 
-$$u=\begin{pmatrix}3\\1\end{pmatrix},\qquad v=\begin{pmatrix}1\\4\end{pmatrix}$$
+The vectors:
 
-### Step 1: Construct a matrix using the vectors as columns.
+$$
+u=(3,1),\qquad v=(1,4)
+$$
 
-$$A=\begin{pmatrix}3&1\\1&4\end{pmatrix}$$
+span a parallelogram.
 
-### Step 2: Calculate the determinant.
+Compute its area using a determinant. Then reverse the order of the vectors and explain what changes in the determinant and what does not change in the area.
 
-$$\det(A)=3\cdot4-1\cdot1=12-1=11$$
+## Solution
 
-### Step 3: Calculate the area.
+### 1. Represent the Vectors as a Matrix
 
-The area of the parallelogram is the absolute value of the determinant.
+We are given two vectors:
 
-$$\text{Area}=|\det(A)|=|11|=\boxed{11}$$
+$$
+u=\begin{pmatrix}3\\1\end{pmatrix},
+\qquad
+v=\begin{pmatrix}1\\4\end{pmatrix}
+$$
 
-### Step 4: Reverse the order of the vectors.
+To calculate the area of the parallelogram, we place these vectors as the columns of a matrix.
 
-$$B=\begin{pmatrix}1&3\\4&1\end{pmatrix}$$
+Therefore:
 
-$$\det(B)=1\cdot1-3\cdot4=1-12=\boxed{-11}$$
+$$
+A=
+\begin{pmatrix}
+3&1\\
+1&4
+\end{pmatrix}
+$$
 
-The area is $|-11|=\boxed{11}$.
+### 2. Calculate the Determinant
 
-**Conclusion:** Reversing the order of the vectors changes the sign of
-the determinant, but the area remains unchanged because area is the
-absolute value of the determinant.
+For a 2×2 matrix, the determinant formula is:
 
-------------------------------------------------------------------------
+$$
+\det(A)=ad-bc
+$$
 
+Applying the formula to our matrix:
+
+$$
+\det(A)=3\cdot4-1\cdot1
+$$
+
+Calculating the products:
+
+$$
+\det(A)=12-1
+$$
+
+Therefore:
+
+$$
+\boxed{\det(A)=11}
+$$
+
+### 3. Calculate the Area of the Parallelogram
+
+The area of a parallelogram formed by two vectors is the absolute value of the determinant of the matrix containing those vectors as columns.
+
+The formula is:
+
+$$
+\text{Area}=|\det(A)|
+$$
+
+Substituting our result:
+
+$$
+\text{Area}=|11|
+$$
+
+Therefore:
+
+$$
+\boxed{\text{Area}=11}
+$$
+
+The absolute value is used because a geometric area cannot be negative.
+
+### 4. Reverse the Order of the Vectors
+
+Now we reverse the order of the vectors.
+
+Originally, the columns were u and v. We now place v first and u second.
+
+The new matrix is:
+
+$$
+B=
+\begin{pmatrix}
+1&3\\
+4&1
+\end{pmatrix}
+$$
+
+### 5. Calculate the New Determinant
+
+Using the 2×2 determinant formula:
+
+$$
+\det(B)=1\cdot1-3\cdot4
+$$
+
+Calculating the products:
+
+$$
+\det(B)=1-12
+$$
+
+Therefore:
+
+$$
+\boxed{\det(B)=-11}
+$$
+
+### 6. Compare the Determinants and Areas
+
+The original determinant was:
+
+$$
+\det(A)=11
+$$
+
+After reversing the vectors:
+
+$$
+\det(B)=-11
+$$
+
+We can observe that:
+
+$$
+\det(B)=-\det(A)
+$$
+
+Swapping two columns changes the sign of the determinant.
+
+However, the area is calculated using the absolute value.
+
+For the original matrix:
+
+$$
+\text{Area}(A)=|11|=11
+$$
+
+For the new matrix:
+
+$$
+\text{Area}(B)=|-11|=11
+$$
+
+Therefore:
+
+$$
+\boxed{\text{Area}(A)=\text{Area}(B)=11}
+$$
+
+### 7. Geometric Explanation
+
+The determinant represents the signed area of the parallelogram.
+
+Its sign indicates the orientation of the ordered pair of vectors.
+
+When we reverse the order of the vectors:
+
+- The orientation changes.
+- The sign of the determinant changes.
+- The absolute value of the determinant remains the same.
+- The geometric area does not change.
+
+Therefore, reversing the vectors changes the orientation but does not change the size of the parallelogram.
+
+### 8. Final Conclusion
+
+The determinant of the original matrix is:
+
+$$
+\boxed{\det(A)=11}
+$$
+
+After reversing the order of the vectors:
+
+$$
+\boxed{\det(B)=-11}
+$$
+
+The area in both cases is:
+
+$$
+\boxed{\text{Area}=11}
+$$
+
+This exercise demonstrates that the determinant gives a signed geometric area, while its absolute value gives the actual area of the parallelogram.
