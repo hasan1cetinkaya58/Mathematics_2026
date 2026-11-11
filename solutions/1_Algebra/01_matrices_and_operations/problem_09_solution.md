@@ -242,4 +242,4 @@ $$
 
 Matrix multiplication represents the composition of transformations. The order of transformations matters because matrix multiplication is generally not commutative.
 
-In this example, applying nonuniform scaling before rotation produces a different result from applying rotation before nonuniform scaling. This demonstrates why the order of matrix transformations must be carefully considered.ifferent result from applying rotation before nonuniform scaling. This demonstrates why the order of matrix transformations must be carefully considered.
+In this example, applying nonuniform scaling before rotation produces a different result from applying rotation before nonuniform scaling. This demonstrates why the order of matrix transformations must be carefully considered.
