@@ -17,13 +17,13 @@ c & d
 \end{pmatrix}
 $$
 
-Find the conditions on \(a,b,c,d\) under which \(AB=BA\). Describe the general form of all such matrices \(B\).
+Find the conditions on $a,b,c,d$ under which $AB=BA$. Describe the general form of all such matrices $B$.
 
 ## Solution
 
 ### 1. Identify the Given Matrices
 
-We are given two \(2 \times 2\) matrices:
+We are given two $2 \times 2$ matrices:
 
 $$
 A = \begin{pmatrix}
@@ -41,7 +41,7 @@ c & d
 \end{pmatrix}
 $$
 
-Our goal is to find all values of \(a,b,c,d\) for which:
+Our goal is to find all values of $a,b,c,d$ for which:
 
 $$
 AB = BA
@@ -51,7 +51,7 @@ This means that multiplying the matrices in either order must produce exactly th
 
 ### 2. Calculate the Product AB
 
-First, we multiply matrix \(A\) by matrix \(B\):
+First, we multiply matrix $A$ by matrix $B$:
 
 $$
 AB =
@@ -103,7 +103,7 @@ $$
 
 ### 3. Calculate the Product BA
 
-Now, we multiply matrix \(B\) by matrix \(A\) in the reverse order:
+Now, we multiply matrix $B$ by matrix $A$ in the reverse order:
 
 $$
 BA =
@@ -152,9 +152,6 @@ a & a+b \\
 c & c+d
 \end{pmatrix}
 $$
-
-
-
 
 ### 4. Set AB Equal to BA
 
@@ -212,7 +209,6 @@ $$
 c=0,\qquad d=a
 $$
 
-
 ### 5. Determine the Conditions
 
 Combining all the equations, we obtain:
@@ -221,13 +217,13 @@ $$
 \boxed{c=0,\qquad d=a}
 $$
 
-There is no restriction on the values of \(a\) and \(b\).
+There is no restriction on the values of $a$ and $b$.
 
-Therefore, \(a\) and \(b\) can be any real numbers.
+Therefore, $a$ and $b$ can be any real numbers.
 
 ### 6. Describe the General Form of B
 
-Substituting the conditions \(c=0\) and \(d=a\) into the original matrix \(B\), we obtain:
+Substituting the conditions $c=0$ and $d=a$ into the original matrix $B$, we obtain:
 
 $$
 B =
@@ -237,11 +233,11 @@ a & b \\
 \end{pmatrix}
 $$
 
-This is the general form of every matrix \(B\) that commutes with matrix \(A\).
+This is the general form of every matrix $B$ that commutes with matrix $A$.
 
 ### 7. Verify the Result
 
-To verify our result, we substitute the general form of \(B\) into both products.
+To verify our result, we substitute the general form of $B$ into both products.
 
 First:
 
@@ -267,7 +263,7 @@ a & a+b \\
 \end{pmatrix}
 $$
 
-Now calculate \(BA\):
+Now calculate $BA$:
 
 $$
 BA =
@@ -301,15 +297,15 @@ The result is verified.
 
 ## Final Answer
 
-The necessary and sufficient conditions for \(AB=BA\) are:
+The necessary and sufficient conditions for $AB=BA$ are:
 
 $$
 \boxed{c=0,\qquad d=a}
 $$
 
-There are no restrictions on \(a\) and \(b\).
+There are no restrictions on $a$ and $b$.
 
-Therefore, the general form of all matrices \(B\) that commute with \(A\) is:
+Therefore, the general form of all matrices $B$ that commute with $A$ is:
 
 $$
 \boxed{
@@ -323,10 +319,10 @@ $$
 
 ### Conclusion
 
-Matrix multiplication is generally not commutative, meaning that \(AB\) and \(BA\) are not usually equal.
+Matrix multiplication is generally not commutative, meaning that $AB$ and $BA$ are not usually equal.
 
 However, this exercise demonstrates that certain matrices can commute when specific conditions are satisfied.
 
-In this case, matrix \(B\) must have zeros in its bottom-left position and equal diagonal entries.
+In this case, matrix $B$ must have zeros in its bottom-left position and equal diagonal entries.
 
-Thus, infinitely many matrices commute with the given matrix \(A\).
+Thus, infinitely many matrices commute with the given matrix $A$.
