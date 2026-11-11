@@ -11,6 +11,8 @@ $$
 
 Compute F², F³, F⁴, and F⁵. Compare the results with the Fibonacci sequence and explain how matrix multiplication performs one recurrence step.
 
+Also compute F(a,b)^T = (a+b,a)^T and explain how this multiplication advances the Fibonacci recurrence.
+
 ## Solution
 
 ### 1. Identify the Given Matrix
