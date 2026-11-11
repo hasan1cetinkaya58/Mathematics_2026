@@ -1,76 +1,177 @@
-# Determinants – Exercise 14
+# Exercise 14. A System of Equations and the Determinant
 
-## Exercise 14. A System of Equations and the Determinant
+## Question
 
-Given:
+Consider the system
 
-$$Ax=b,\qquad A=\begin{pmatrix}1&2\\k&4\end{pmatrix}$$
+$$
+Ax=b,
+$$
 
-We need to find the values of k for which the system has exactly one
-solution for every b.
+where
 
-### Step 1: Calculate the determinant.
+$$
+A=\begin{pmatrix}
+1&2\\
+k&4
+\end{pmatrix}.
+$$
 
-$$\det(A)=1\cdot4-2\cdot k=4-2k$$
+For which values of $k$ does the system have exactly one solution for every $b$?
 
-### Step 2: Apply the unique solution condition.
+For the remaining value of $k$, give:
+- An example of a right-hand side $b$ for which the system has infinitely many solutions.
+- An example of a right-hand side $b$ for which the system has no solution.
 
-A system has exactly one solution for every right-hand side b if the
-coefficient matrix is invertible.
+## Solution
 
-$$\det(A)\neq0$$ $$4-2k\neq0$$ $$4\neq2k$$ $$\boxed{k\neq2}$$
+### Step 1. Calculate the Determinant
 
-### Step 3: Consider the exceptional case $k=2$.
+A square system has exactly one solution for every right-hand side $b$ if and only if its coefficient matrix is invertible.
 
-Substitute $k=2$:
+A matrix is invertible if and only if its determinant is nonzero.
 
-$$A=\begin{pmatrix}1&2\\2&4\end{pmatrix}$$
+For the given matrix,
 
-The system becomes:
+$$
+A=\begin{pmatrix}
+1&2\\
+k&4
+\end{pmatrix},
+$$
 
-$$x+2y=b_1$$ $$2x+4y=b_2$$
+the determinant is
 
-### Example 1: Infinitely many solutions
+$$
+\det(A)=1\cdot4-2\cdot k.
+$$
 
-Choose:
+Therefore,
 
-$$b=\begin{pmatrix}1\\2\end{pmatrix}$$
+$$
+\det(A)=4-2k.
+$$
 
-The system becomes:
+### Step 2. Find the Values of k for Which the Solution Is Unique
 
-$$x+2y=1$$ $$2x+4y=2$$
+The matrix is invertible when its determinant is not zero.
 
-The second equation is twice the first equation. Therefore, both
-equations represent the same line.
+Thus,
 
-$$x=1-2y$$
+$$
+4-2k\neq0.
+$$
 
-There are infinitely many possible values of x and y.
+Solving this inequality gives
 
-$$\boxed{\text{Infinitely many solutions}}$$
+$$
+k\neq2.
+$$
 
-### Example 2: No solution
+Therefore, for every $k\neq2$, the system has exactly one solution for every right-hand side $b$.
 
-Choose:
+### Step 3. Examine the Exceptional Case k = 2
 
-$$b=\begin{pmatrix}1\\0\end{pmatrix}$$
+When $k=2$, the coefficient matrix becomes
 
-The system becomes:
+$$
+A=\begin{pmatrix}
+1&2\\
+2&4
+\end{pmatrix}.
+$$
 
-$$x+2y=1$$ $$2x+4y=0$$
+The corresponding system is
 
-Multiply the first equation by 2:
+$$
+\begin{cases}
+x+2y=b_1,\\
+2x+4y=b_2.
+\end{cases}
+$$
 
-$$2x+4y=2$$
+The second equation has a left-hand side that is twice the first equation.
 
-But the second equation says $2x+4y=0$. This gives the contradiction:
+Therefore, the two equations are dependent. The system may have infinitely many solutions or no solution, depending on the right-hand side $b$.
 
-$$2=0$$
+### Step 4. Give an Example with Infinitely Many Solutions
+
+Choose
+
+$$
+b=\begin{pmatrix}
+1\\
+2
+\end{pmatrix}.
+$$
+
+The system becomes
+
+$$
+\begin{cases}
+x+2y=1,\\
+2x+4y=2.
+\end{cases}
+$$
+
+The second equation is exactly twice the first equation.
+
+Thus, both equations describe the same line, and there are infinitely many solutions.
+
+For example, all pairs satisfying
+
+$$
+x=1-2y
+$$
+
+are solutions.
+
+### Step 5. Give an Example with No Solution
+
+Now choose
+
+$$
+b=\begin{pmatrix}
+1\\
+3
+\end{pmatrix}.
+$$
+
+The system becomes
+
+$$
+\begin{cases}
+x+2y=1,\\
+2x+4y=3.
+\end{cases}
+$$
+
+Multiplying the first equation by $2$ gives
+
+$$
+2x+4y=2.
+$$
+
+However, the second equation requires
+
+$$
+2x+4y=3.
+$$
+
+These equations contradict each other. Therefore, the system has no solution.
+
+### Step 6. Final Answer and Conclusion
+
+The determinant is
+
+$$
+\det(A)=4-2k.
+$$
 
 Therefore:
 
-$$\boxed{\text{No solution}}$$
+- If $k\neq2$, the system has exactly one solution for every $b$.
+- If $k=2$ and $b=(1,2)^T$, the system has infinitely many solutions.
+- If $k=2$ and $b=(1,3)^T$, the system has no solution.
 
-
-------------------------------------------------------------------------
-
+At the exceptional value $k=2$, the second row of the coefficient matrix is twice the first row. The rows are linearly dependent, which explains why the system does not have a unique solution for every right-hand side.
