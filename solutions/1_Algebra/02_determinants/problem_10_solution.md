@@ -1,22 +1,27 @@
-
 # Exercise 10 – Detecting Dependence
 
-## 1. Given Matrix
+## Question
 
-The determinant is given as:
+Given the matrix:
 
 $$
-\det(A)=
-\det\begin{pmatrix}
+A=
+\begin{pmatrix}
 1 & 2 & 3\\
 2 & 4 & 6\\
 0 & 1 & 5
 \end{pmatrix}
 $$
 
-We are asked to explain why the determinant is zero without carrying out a full determinant calculation.
+Explain why the determinant is zero without carrying out a full determinant calculation.
 
-## 2. Identify the Dependence Between the Rows
+1. Identify the specific rows that are linearly dependent and explain the relationship between them.
+2. Explain why this row dependence makes the determinant zero.
+3. Explain how this implies that the matrix is not invertible.
+
+## Solution
+
+### 1. Identify the Dependence Between the Rows
 
 Consider the first and second rows:
 
@@ -34,9 +39,9 @@ $$
 R_2=2R_1
 $$
 
-Therefore, the rows are linearly dependent.
+Therefore, the first and second rows are linearly dependent.
 
-## 3. Why Does This Make the Determinant Zero?
+### 2. Why Does This Make the Determinant Zero?
 
 A fundamental property of determinants states that if two rows of a square matrix are linearly dependent, its determinant must be zero.
 
@@ -48,7 +53,7 @@ $$
 \det(A)=0
 $$
 
-## 4. Connection with Noninvertibility
+### 3. Connection with Noninvertibility
 
 A square matrix is invertible if and only if its determinant is nonzero.
 
@@ -62,7 +67,9 @@ the matrix is not invertible.
 
 This means that the matrix has no inverse.
 
-## 5. Final Conclusion
+The row dependence explains why the determinant is zero and, as a result, why the matrix is singular.
+
+### 4. Final Conclusion
 
 The determinant is zero because the second row is twice the first row:
 
