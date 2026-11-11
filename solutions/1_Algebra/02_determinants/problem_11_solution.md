@@ -1,41 +1,121 @@
-# Determinants – Exercise 11
+# Exercise 11. Shortening the Calculation with Row Operations
 
-## Exercise 11. Shortening the Calculation with Row Operations
+## Question
 
-Given:
+Compute the determinant
 
-$$A=\begin{pmatrix}1&2&3\\1&3&4\\1&4&6\end{pmatrix}$$
+$$
+\det(A)=
+\begin{vmatrix}
+1 & 2 & 3\\
+1 & 3 & 4\\
+1 & 4 & 6
+\end{vmatrix}
+$$
 
-We will create as many zeros as possible using row operations.
+by first performing row operations that create as many zeros as possible.
 
-### Step 1: Subtract row 1 from row 2.
+State which row operations do not change the determinant.
 
-$$R_2\leftarrow R_2-R_1$$ $$ (1,3,4)-(1,2,3)=(0,1,1) $$
+> **Why this exercise:** This exercise develops planning instead of mechanically repeating the same procedure.
 
-### Step 2: Subtract row 1 from row 3.
+## Solution
 
-$$R_3\leftarrow R_3-R_1$$ $$ (1,4,6)-(1,2,3)=(0,2,3) $$
+### Step 1. Plan the Row Operations
 
-The resulting matrix is:
+Before calculating the determinant, we should first create as many zeros as possible below the main diagonal. This will transform the matrix into an upper triangular matrix, whose determinant is the product of its diagonal entries.
 
-$$A'=\begin{pmatrix}1&2&3\\0&1&1\\0&2&3\end{pmatrix}$$
+There are three types of elementary row operations:
 
-### Step 3: Eliminate the second entry of row 3.
+1. **Row replacement:** Adding a multiple of one row to another row does not change the determinant.
+2. **Row interchange:** Swapping two rows changes the sign of the determinant.
+3. **Row scaling:** Multiplying a row by a nonzero constant multiplies the determinant by that constant.
 
-$$R_3\leftarrow R_3-2R_2$$ $$ (0,2,3)-2(0,1,1)=(0,0,1) $$
+In this solution, we will use only row replacement operations. Therefore, the determinant will remain unchanged throughout the calculation.
 
-The resulting matrix is:
+### Step 2. Write the Given Matrix
 
-$$A''=\begin{pmatrix}1&2&3\\0&1&1\\0&0&1\end{pmatrix}$$
+$$
+A=
+\begin{pmatrix}
+1 & 2 & 3\\
+1 & 3 & 4\\
+1 & 4 & 6
+\end{pmatrix}
+$$
 
-### Step 4: Calculate the determinant.
+### Step 3. Create Zeros in the First Column
 
-The matrix is upper triangular.
+First, subtract the first row from the second row:
 
-$$\det(A)=1\cdot1\cdot1=\boxed{1}$$
+$$
+R_2 \rightarrow R_2-R_1
+$$
 
-All three row operations add a multiple of one row to another row, so
-they do not change the determinant.
+Then, subtract the first row from the third row:
 
-------------------------------------------------------------------------
+$$
+R_3 \rightarrow R_3-R_1
+$$
 
+The matrix becomes:
+
+$$
+\begin{pmatrix}
+1 & 2 & 3\\
+0 & 1 & 1\\
+0 & 2 & 3
+\end{pmatrix}
+$$
+
+Neither operation changes the determinant because both are row replacement operations.
+
+### Step 4. Create a Zero in the Second Column
+
+Now subtract twice the second row from the third row:
+
+$$
+R_3 \rightarrow R_3-2R_2
+$$
+
+We obtain:
+
+$$
+\begin{pmatrix}
+1 & 2 & 3\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{pmatrix}
+$$
+
+This operation also does not change the determinant.
+
+The matrix is now upper triangular.
+
+### Step 5. Calculate the Determinant
+
+The determinant of an upper triangular matrix is the product of its diagonal entries.
+
+Therefore:
+
+$$
+\det(A)=1\cdot1\cdot1
+$$
+
+$$
+\boxed{\det(A)=1}
+$$
+
+### Step 6. Final Answer and Conclusion
+
+The final answer is:
+
+$$
+\boxed{\det(A)=1}
+$$
+
+We simplified the matrix by creating zeros below the main diagonal.
+
+All the row operations used in this solution were row replacement operations. Adding a multiple of one row to another does not change the determinant.
+
+Therefore, the determinant remained unchanged throughout the calculation, and the final answer is **1**.
