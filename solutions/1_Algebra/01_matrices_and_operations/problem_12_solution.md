@@ -1,4 +1,3 @@
-
 # Exercise 12: Formula for a Matrix Power
 
 ## Question
@@ -13,11 +12,11 @@ A=
 \end{pmatrix}
 $$
 
-Compute \(A^2\), \(A^3\), and \(A^4\). Formulate a conjecture for \(A^n\), and prove the formula using mathematical induction.
+Compute $A^2$, $A^3$, and $A^4$. Formulate a conjecture for $A^n$, and prove the formula using mathematical induction.
 
 ## Solution
 
-### 1. Calculate the Second Power \(A^2\)
+### 1. Calculate the Second Power $A^2$
 
 By definition:
 
@@ -75,9 +74,9 @@ A^2=
 \end{pmatrix}
 $$
 
-### 2. Calculate the Third Power \(A^3\)
+### 2. Calculate the Third Power $A^3$
 
-We multiply \(A^2\) by \(A\):
+We multiply $A^2$ by $A$:
 
 $$
 A^3=A^2\cdot A
@@ -131,9 +130,9 @@ A^3=
 \end{pmatrix}
 $$
 
-### 3. Calculate the Fourth Power \(A^4\)
+### 3. Calculate the Fourth Power $A^4$
 
-We multiply \(A^3\) by \(A\):
+We multiply $A^3$ by $A$:
 
 $$
 A^4=A^3\cdot A
@@ -249,7 +248,7 @@ for every positive integer n.
 
 **Base Case:**
 
-For \(n=1\), the original matrix is:
+For $n=1$, the original matrix is:
 
 $$
 A^1=
@@ -268,7 +267,7 @@ $$
 \end{pmatrix}
 $$
 
-Both expressions are equal. Therefore, the formula is true for \(n=1\).
+Both expressions are equal. Therefore, the formula is true for $n=1$.
 
 **Inductive Hypothesis:**
 
@@ -286,7 +285,7 @@ $$
 
 **Inductive Step:**
 
-We must show that the formula is also true for \(n+1\).
+We must show that the formula is also true for $n+1$.
 
 By the definition of matrix powers:
 
