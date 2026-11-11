@@ -10,7 +10,7 @@ S=\begin{pmatrix}2&0\\0&1\end{pmatrix},
 R=\begin{pmatrix}0&-1\\1&0\end{pmatrix}
 $$
 
-The matrix \(S\) represents nonuniform scaling, while \(R\) represents a \(90^\circ\) counterclockwise rotation.
+The matrix $S$ represents nonuniform scaling, while $R$ represents a $90^\circ$ counterclockwise rotation.
 
 The given vector is:
 
@@ -18,7 +18,7 @@ $$
 x=\begin{pmatrix}1\\2\end{pmatrix}
 $$
 
-Compute \(RSx\) and \(SRx\). Compare the results and explain geometrically why the order of these transformations matters.
+Compute $RSx$ and $SRx$. Compare the results and explain geometrically why the order of these transformations matters.
 
 ## Solution
 
