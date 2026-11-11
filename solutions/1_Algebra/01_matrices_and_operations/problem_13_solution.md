@@ -1,4 +1,3 @@
-
 # Exercise 13: A Recurrence Written in Matrix Form
 
 ## Question
