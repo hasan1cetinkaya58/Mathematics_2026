@@ -3,7 +3,7 @@
 
 ## Question
 
-For
+Consider the following matrix:
 
 $$
 A =
@@ -13,30 +13,32 @@ A =
 \end{pmatrix}
 $$
 
-Explain in two ways why \(A^{-1}\) does not exist:
-using the determinant and using dependence between the rows.
+Explain in two different ways why the inverse matrix $A^{-1}$ does not exist:
+
+1. Using the determinant of the matrix.
+2. Using the linear dependence between the rows.
 
 ## Solution
 
 ### Step 1. Calculate the Determinant
 
-First, we calculate the determinant of matrix \(A\).
-
-For a \(2 \times 2\) matrix, the determinant is calculated using the formula:
+For a $2 \times 2$ matrix, the determinant is calculated using the formula:
 
 $$
 \det(A) = ad - bc
 $$
 
-Substituting the values from the matrix:
+The given matrix is:
 
 $$
-\det(A) =
-\begin{vmatrix}
+A =
+\begin{pmatrix}
 2 & 4 \\
 1 & 2
-\end{vmatrix}
+\end{pmatrix}
 $$
+
+Substituting the values into the formula:
 
 $$
 \det(A) = (2)(2) - (4)(1)
@@ -47,48 +49,44 @@ $$
 $$
 
 $$
-\boxed{\det(A) = 0}
+\det(A) = 0
 $$
 
-Since the determinant is zero, the matrix is singular and its inverse does not exist.
+Since the determinant is zero, matrix $A$ is singular. Therefore, its inverse does not exist.
 
-### Step 2. Check the Dependence Between the Rows
+### Step 2. Examine the Linear Dependence Between the Rows
 
-Now, we examine the relationship between the two rows of matrix \(A\).
-
-The first row is:
+The first row of matrix $A$ is:
 
 $$
 R_1 = (2,4)
 $$
 
-The second row is:
+The second row of matrix $A$ is:
 
 $$
 R_2 = (1,2)
 $$
 
-We can see that the second row is exactly half of the first row.
+We can see that the second row is exactly half of the first row:
 
 $$
 R_2 = \frac{1}{2}R_1
 $$
 
-Checking:
+To verify this relationship:
 
 $$
 \frac{1}{2}(2,4) = (1,2)
 $$
 
-Therefore, the rows are linearly dependent.
-
-This means that the rows do not provide independent information, and the matrix does not have full rank.
+Therefore, the two rows are linearly dependent.
 
 ### Step 3. Explain Why the Inverse Does Not Exist
 
-A square matrix is invertible only if its determinant is nonzero and its rows are linearly independent.
+A square matrix is invertible if and only if its rows are linearly independent and its determinant is nonzero.
 
-For matrix \(A\):
+For matrix $A$, we have:
 
 $$
 \det(A) = 0
@@ -100,28 +98,40 @@ $$
 R_2 = \frac{1}{2}R_1
 $$
 
-Both conditions show that the matrix is singular.
+The rows are linearly dependent. Therefore, matrix $A$ does not have full rank.
 
-Therefore, no inverse matrix exists.
+Since the matrix has two rows but only one linearly independent row, its rank is:
+
+$$
+\text{rank}(A) = 1
+$$
+
+Consequently, matrix $A$ is singular and cannot have an inverse.
 
 ### Final Answer
 
-$$
-\boxed{\det(A)=0}
-$$
+The determinant is:
 
 $$
-\boxed{R_2=\frac{1}{2}R_1}
+\boxed{\det(A) = 0}
 $$
 
+The rows are linearly dependent:
+
 $$
-\boxed{A^{-1}\text{ does not exist}}
+\boxed{R_2 = \frac{1}{2}R_1}
+$$
+
+Therefore:
+
+$$
+\boxed{A^{-1} \text{ does not exist}}
 $$
 
 ### Conclusion
 
-The inverse of matrix \(A\) does not exist for two reasons.
+The inverse of matrix $A$ does not exist for two reasons.
 
-First, its determinant is zero. Second, its rows are linearly dependent because the second row is half of the first row.
+First, its determinant is zero. Second, its rows are linearly dependent because the second row is exactly half of the first row.
 
-These two properties describe the same mathematical problem: the matrix is singular and cannot be inverted.
+Both properties show that matrix $A$ is singular and cannot be inverted.
