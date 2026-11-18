@@ -1,339 +1,98 @@
-
 # Exercise 13. Undoing a Composite Transformation
 
 ## Question
 
-The matrices
+**Given:**
 
-```math
-S =
-\begin{pmatrix}
-2 & 0 \\
-0 & 1
-\end{pmatrix},
-\qquad
-H =
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}
-```
+The matrices describing nonuniform scaling and shear are:
 
-describe nonuniform scaling and shear.
+$$\large S = \begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix}, \qquad H = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$$
 
-For `T = HS`, find `T^(-1)` in two ways:
+Let $T = HS$.
 
-1. First compute `T`, then its inverse.
-2. Use the property `(HS)^(-1) = S^(-1)H^(-1)`.
+**Required:**
 
-Compare the results. Additionally, compute `H^(-1)S^(-1)` and verify that the incorrect order gives a different matrix.
+1. Find $T^{-1}$ in two ways:
+   - **Method 1:** First compute $T$, then compute its inverse $T^{-1}$.
+   - **Method 2:** Use the inverse of a product property $(HS)^{-1} = S^{-1}H^{-1}$.
+2. Compare the results from both methods.
+3. Compute $H^{-1}S^{-1}$ and verify that multiplying the inverses in the incorrect order gives a different matrix.
+4. Explain the rule: *"When undoing a composition of operations, we undo them from the end."*
 
-Explain the rule: "When undoing a composition of operations, we undo them from the end."
+> **Why this exercise:** Reinforces the inverse of a product in a less direct configuration.
+
+---
 
 ## Solution
 
-### Step 1. Calculate T = HS
-
-We are given:
-
-```math
-H =
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix},
-\qquad
-S =
-\begin{pmatrix}
-2 & 0 \\
-0 & 1
-\end{pmatrix}
-```
-
-Since `T = HS`, we multiply `H` by `S` in this order:
-
-```math
-T = HS =
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}
-\begin{pmatrix}
-2 & 0 \\
-0 & 1
-\end{pmatrix}
-```
-
-Multiplying the matrices:
-
-```math
-T =
-\begin{pmatrix}
-1\cdot2+1\cdot0 & 1\cdot0+1\cdot1 \\
-0\cdot2+1\cdot0 & 0\cdot0+1\cdot1
-\end{pmatrix}
-```
-
-Therefore:
-
-```math
-T =
-\begin{pmatrix}
-2 & 1 \\
-0 & 1
-\end{pmatrix}
-```
-
-### Step 2. Find the Inverse of T Directly
-
-For a two-by-two matrix, the inverse formula is:
-
-```math
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}^{-1}
-=
-\frac{1}{ad-bc}
-\begin{pmatrix}
-d & -b \\
--c & a
-\end{pmatrix}
-```
-
-First, calculate the determinant of `T`:
-
-```math
-\det(T) = 2\cdot1-1\cdot0=2
-```
-
-Since the determinant is nonzero, the inverse exists.
-
-Applying the inverse formula:
-
-```math
-T^{-1}
-=
-\frac{1}{2}
-\begin{pmatrix}
-1 & -1 \\
-0 & 2
-\end{pmatrix}
-```
-
-Thus:
-
-```math
-T^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & 1
-\end{pmatrix}
-```
-
-### Step 3. Find the Inverse Using the Product Property
-
-We use the inverse of a product property:
-
-```math
-(HS)^{-1}=S^{-1}H^{-1}
-```
-
-First, calculate the inverse of `S`:
-
-```math
-S^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & 0 \\
-0 & 1
-\end{pmatrix}
-```
-
-Next, calculate the inverse of `H`:
-
-```math
-H^{-1}
-=
-\begin{pmatrix}
-1 & -1 \\
-0 & 1
-\end{pmatrix}
-```
-
-Now multiply `S^(-1)` by `H^(-1)` in the correct order:
-
-```math
-T^{-1}=S^{-1}H^{-1}
-```
-
-```math
-T^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & 0 \\
-0 & 1
-\end{pmatrix}
-\begin{pmatrix}
-1 & -1 \\
-0 & 1
-\end{pmatrix}
-```
-
-Multiplying the matrices:
-
-```math
-T^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2}\cdot1+0\cdot0 &
-\frac{1}{2}\cdot(-1)+0\cdot1 \\
-0\cdot1+1\cdot0 &
-0\cdot(-1)+1\cdot1
-\end{pmatrix}
-```
-
-Therefore:
-
-```math
-T^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & 1
-\end{pmatrix}
-```
-
-### Step 4. Compare the Two Results
-
-The first method gives:
-
-```math
-T^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & 1
-\end{pmatrix}
-```
-
-The second method gives:
-
-```math
-T^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & 1
-\end{pmatrix}
-```
-
-Both methods produce exactly the same result.
-
-Therefore, the inverse product property is verified.
-
-### Step 5. Calculate the Incorrect Order
-
-Now calculate `H^(-1)S^(-1)` instead of `S^(-1)H^(-1)`:
-
-```math
-H^{-1}S^{-1}
-=
-\begin{pmatrix}
-1 & -1 \\
-0 & 1
-\end{pmatrix}
-\begin{pmatrix}
-\frac{1}{2} & 0 \\
-0 & 1
-\end{pmatrix}
-```
-
-Multiplying the matrices:
-
-```math
-H^{-1}S^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & -1 \\
-0 & 1
-\end{pmatrix}
-```
-
-This is different from the correct inverse:
-
-```math
-S^{-1}H^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & 1
-\end{pmatrix}
-```
-
-Therefore:
-
-```math
-H^{-1}S^{-1} \neq S^{-1}H^{-1}
-```
-
-The order of matrix multiplication matters.
-
-### Step 6. Explain the Rule
-
-The original transformation is:
-
-```math
-T=HS
-```
-
-This means that the scaling transformation `S` is applied first, followed by the shear transformation `H`.
-
-To undo the complete transformation, we must undo the shear first and then undo the scaling.
-
-Therefore, the inverse is:
-
-```math
-T^{-1}=S^{-1}H^{-1}
-```
-
-We reverse the order of the transformations when finding the inverse.
-
-### Final Answer
-
-The correct inverse is:
-
-```math
-T^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & 1
-\end{pmatrix}
-```
-
-The incorrect order gives:
-
-```math
-H^{-1}S^{-1}
-=
-\begin{pmatrix}
-\frac{1}{2} & -1 \\
-0 & 1
-\end{pmatrix}
-```
-
-These two matrices are different.
-
-### Conclusion
-
-The inverse of a product of matrices reverses the order of multiplication:
-
-```math
-(HS)^{-1}=S^{-1}H^{-1}
-```
-
-This means that when undoing a composition of operations, we must undo the last operation first.
-
-The two correct methods give the same inverse, while reversing the order incorrectly produces a different matrix.
+### Step 1. Method 1 — Compute $T$ First, Then Find $T^{-1}$First, we compute the composite transformation matrix $T = HS$:
+
+$$\large T = HS = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix}$$
+
+Performing the matrix multiplication entry by entry:
+
+$$\large T = \begin{bmatrix} 1 \cdot 2 + 1 \cdot 0 & 1 \cdot 0 + 1 \cdot 1 \\ 0 \cdot 2 + 1 \cdot 0 & 0 \cdot 0 + 1 \cdot 1 \end{bmatrix}$$
+
+Simplifying gives:
+
+$$\large T = \begin{bmatrix} 2 & 1 \\ 0 & 1 \end{bmatrix}$$
+
+Next, we find the inverse of $T = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ using the general $2 \times 2$ inverse formula:
+
+$$\large T^{-1} = \dfrac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$$
+
+We first calculate the determinant of $T$:
+
+$$\large \det(T) = (2)(1) - (1)(0) = 2 \neq 0$$
+
+Since $\det(T) \neq 0$, $T$ is invertible. Substituting the entries into the inverse formula gives:
+
+$$\large T^{-1} = \dfrac{1}{2} \begin{bmatrix} 1 & -1 \\ 0 & 2 \end{bmatrix}$$
+
+Multiplying each entry by the scalar $\dfrac{1}{2}$:
+
+$$\large T^{-1} = \begin{bmatrix} \dfrac{1}{2} & -\dfrac{1}{2} \\ 0 & 1 \end{bmatrix}$$
+
+---### Step 2. Method 2 — Use the Product Property $(HS)^{-1} = S^{-1}H^{-1}$First, we compute the individual inverses $S^{-1}$ and $H^{-1}$ separately.
+
+For $S = \begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix}$, the determinant is $\det(S) = (2)(1) - (0)(0) = 2$:
+
+$$\large S^{-1} = \dfrac{1}{2} \begin{bmatrix} 1 & 0 \\ 0 & 2 \end{bmatrix} = \begin{bmatrix} \dfrac{1}{2} & 0 \\ 0 & 1 \end{bmatrix}$$
+
+For $H = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$, the determinant is $\det(H) = (1)(1) - (1)(0) = 1$:
+
+$$\large H^{-1} = \dfrac{1}{1} \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix}$$
+
+Now, we multiply the individual inverses in reverse order ($S^{-1}H^{-1}$):
+
+$$\large S^{-1}H^{-1} = \begin{bmatrix} \dfrac{1}{2} & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix}$$
+
+Performing the matrix multiplication step by step:
+
+$$\large S^{-1}H^{-1} = \begin{bmatrix} \dfrac{1}{2} \cdot 1 + 0 \cdot 0 & \dfrac{1}{2} \cdot (-1) + 0 \cdot 1 \\ 0 \cdot 1 + 1 \cdot 0 & 0 \cdot (-1) + 1 \cdot 1 \end{bmatrix}$$
+
+Simplifying each entry yields:
+
+$$\large S^{-1}H^{-1} = \begin{bmatrix} \dfrac{1}{2} & -\dfrac{1}{2} \\ 0 & 1 \end{bmatrix}$$
+
+---### Step 3. Compare the Two Results
+
+Comparing the inverse matrices obtained in Step 1 and Step 2:
+
+$$\large T^{-1} = \begin{bmatrix} \dfrac{1}{2} & -\dfrac{1}{2} \\ 0 & 1 \end{bmatrix} \qquad \text{and} \qquad S^{-1}H^{-1} = \begin{bmatrix} \dfrac{1}{2} & -\dfrac{1}{2} \\ 0 & 1 \end{bmatrix}$$
+
+Both methods yield the exact same inverse matrix, confirming the product rule $(HS)^{-1} = S^{-1}H^{-1}$.
+
+---
+
+### Step 4. Compute $H^{-1}S^{-1}$ (Incorrect Order) and Verify
+
+Now, we multiply the inverses in the original order $H^{-1}S^{-1}$:
+
+$$\large H^{-1}S^{-1} = \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} \dfrac{1}{2} & 0 \\ 0 & 1 \end{bmatrix}$$
+
+Performing the matrix multiplication:
+
+$$\large H^{-1}S^{-1} = \begin{bmatrix} 1 \cdot \dfrac{1}{2} + (-1) \cdot 0 & 1 \cdot 0 + (-1) \cdot 1 \\ 0 \cdot \dfrac{1}{2} + 1 \cdot 0 & 0 \cdot 0 + 1 \cdot 1 \end{bmatrix}$$
+
+Simpl
