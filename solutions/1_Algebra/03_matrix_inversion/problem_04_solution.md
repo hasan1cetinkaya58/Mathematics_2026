@@ -3,7 +3,7 @@
 
 ## Question
 
-Find \(A^{-1}\) using the Gauss–Jordan method for
+Find the inverse matrix $A^{-1}$ using the Gauss–Jordan method for the matrix:
 
 $$
 A =
@@ -13,13 +13,13 @@ A =
 \end{pmatrix}
 $$
 
-Show the augmented matrix \([A \mid I]\) after successive operations and explain why obtaining \(I\) on the left gives the inverse on the right.
+Show the augmented matrix $[A \mid I]$ after successive row operations and explain why obtaining the identity matrix $I$ on the left gives the inverse matrix on the right.
 
 ## Solution
 
 ### Step 1. Construct the Augmented Matrix
 
-First, we write the original matrix \(A\) next to the identity matrix \(I\).
+First, we write the original matrix $A$ next to the identity matrix $I$.
 
 $$
 [A \mid I] =
@@ -35,7 +35,7 @@ The goal is to transform the left side into the identity matrix.
 
 ### Step 2. Eliminate the Entry Below the First Pivot
 
-We need to eliminate the number 3 in the second row and first column.
+We need to eliminate the number $3$ in the second row and first column.
 
 We apply the row operation:
 
@@ -46,13 +46,11 @@ $$
 Calculating the new second row:
 
 $$
-R_2 =
-(3,5,0,1)-3(1,2,1,0)
+R_2 = (3,5,0,1) - 3(1,2,1,0)
 $$
 
 $$
-R_2 =
-(3-3,\ 5-6,\ 0-3,\ 1-0)
+R_2 = (3-3,\ 5-6,\ 0-3,\ 1-0)
 $$
 
 $$
@@ -72,7 +70,7 @@ $$
 
 ### Step 3. Make the Second Pivot Equal to 1
 
-The second pivot is currently \(-1\). We multiply the entire second row by \(-1\).
+The second pivot is currently $-1$. We multiply the entire second row by $-1$.
 
 We apply:
 
@@ -91,11 +89,11 @@ $$
 \right]
 $$
 
-Now both pivots are equal to 1.
+Now both pivots are equal to $1$.
 
 ### Step 4. Eliminate the Entry Above the Second Pivot
 
-We need to eliminate the number 2 in the first row and second column.
+We need to eliminate the number $2$ in the first row and second column.
 
 We apply the row operation:
 
@@ -106,13 +104,11 @@ $$
 Calculating the new first row:
 
 $$
-R_1 =
-(1,2,1,0)-2(0,1,3,-1)
+R_1 = (1,2,1,0) - 2(0,1,3,-1)
 $$
 
 $$
-R_1 =
-(1-0,\ 2-2,\ 1-6,\ 0+2)
+R_1 = (1-0,\ 2-2,\ 1-6,\ 0+2)
 $$
 
 $$
@@ -132,7 +128,7 @@ $$
 
 ### Step 5. Obtain the Inverse Matrix
 
-The left side of the augmented matrix is now the identity matrix \(I\).
+The left side of the augmented matrix is now the identity matrix $I$.
 
 $$
 \left[
@@ -143,7 +139,7 @@ $$
 \right]
 $$
 
-Since the left side has become \(I\), the right side represents the inverse of the original matrix.
+Since the left side has become the identity matrix, the right side represents the inverse of the original matrix.
 
 Therefore:
 
@@ -157,11 +153,11 @@ A^{-1} =
 }
 $$
 
-### Step 6. Explanation
+### Step 6. Explain Why the Method Works
 
-Each elementary row operation is equivalent to multiplying the matrix by an invertible elementary matrix.
+Each elementary row operation is equivalent to multiplying the matrix on the left by an invertible elementary matrix.
 
-If these operations transform \(A\) into the identity matrix \(I\), the same operations transform \(I\) into \(A^{-1}\).
+If these operations transform $A$ into the identity matrix $I$, the same operations transform $I$ into $A^{-1}$.
 
 Mathematically:
 
@@ -169,15 +165,27 @@ $$
 EA = I
 $$
 
+where $E$ represents the product of all elementary matrices corresponding to the row operations.
+
+Since $EA=I$, the matrix $E$ is the inverse of $A$.
+
 Therefore:
 
 $$
 E = A^{-1}
 $$
 
+Applying the same row operations to the augmented matrix gives:
+
+$$
+[A \mid I] \longrightarrow [I \mid A^{-1}]
+$$
+
 This explains why obtaining the identity matrix on the left gives the inverse matrix on the right.
 
-### Final Answer
+## Final Answer
+
+The inverse of the original matrix is:
 
 $$
 \boxed{
@@ -189,4 +197,5 @@ A^{-1} =
 }
 $$
 
-The Gauss–Jordan method successfully transforms the augmented matrix \([A \mid I]\) into \([I \mid A^{-1}]\). Therefore, the inverse of the original matrix is obtained.
+The Gauss–Jordan method successfully transforms the augmented matrix $[A \mid I]$ into $[I \mid A^{-1}]$. Therefore, the inverse of the original matrix is obtained.
+> **Why this exercise:** introduces the Gauss–Jordan method together with its meaning, not merely as a sequence of operations.
