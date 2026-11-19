@@ -1,217 +1,87 @@
-
 # Exercise 14. A Matrix That Is Its Own Inverse
 
 ## Question
 
-Assume that a square matrix `A` satisfies:
+**Given:**
 
-```math
-A^2 = I
-```
+Assume that a square matrix $A$ satisfies the condition:
 
-Show that:
+$$\large A^2 = I$$
 
-```math
-A^{-1} = A
-```
+where $I$ is the identity matrix of the same size as $A$.
 
-Then give an example of a `2 × 2` matrix different from `I` and `-I` that satisfies this condition, and verify it by multiplication.
+**Required:**
+
+1. Show that $A^{-1} = A$.
+2. Give an example of a $2 \times 2$ matrix different from $I$ and $-I$ that satisfies $A^2 = I$.
+3. Verify the chosen $2 \times 2$ example by matrix multiplication.
+
+> **Why this exercise:** Requires using the definition of the inverse in a short argument and constructing an example independently, without introducing a new topic.
+
+---
 
 ## Solution
 
-### Step 1. Understand the Given Condition
+### Step 1. Show That $A^{-1} = A$
 
-We are given:
+By the definition of an inverse matrix, an invertible matrix $A$ has an inverse $A^{-1}$ if and only if:
 
-```math
-A^2 = I
-```
+$$\large A A^{-1} = I \qquad \text{and} \qquad A^{-1} A = I$$
 
-By the definition of matrix powers:
+We are given that:
 
-```math
-A \cdot A = I
-```
+$$\large A^2 = I$$
 
-This means that multiplying matrix `A` by itself gives the identity matrix.
+Rewriting $A^2$ as a product of $A$ with itself gives:
 
-### Step 2. Show That A Is Its Own Inverse
+$$\large A \cdot A = I$$
 
-The definition of an inverse matrix states that a matrix multiplied by its inverse gives the identity matrix:
+Comparing $A \cdot A = I$ with the defining property $A \cdot A^{-1} = I$ (and by uniqueness of the inverse matrix), we conclude that:
 
-```math
-A \cdot A^{-1} = I
-```
+$$\large A^{-1} = A$$
 
-From the given condition, we also know that:
+---
 
-```math
-A \cdot A = I
-```
+### Step 2. Construct a $2 \times 2$ Example Different from $I$ and $-I$
 
-Comparing these two equations, we see that `A` itself satisfies the definition of the inverse of `A`.
+Consider the $2 \times 2$ reflection matrix:
 
-Therefore:
+$$\large A = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$$
 
-```math
-A^{-1} = A
-```
+Clearly, $A \neq I$ and $A \neq -I$, since:
 
-This proves that the matrix is its own inverse.
+$$\large I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \qquad \text{and} \qquad -I = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$$
 
-### Step 3. Construct a 2 × 2 Example
+---
 
-We choose the following matrix:
+### Step 3. Verify the Example by Multiplication
 
-```math
-A =
-\begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix}
-```
+We compute $A^2 = A \cdot A$:
 
-This matrix is different from both identity matrices `I` and `-I`.
+$$\large A^2 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$$
 
-The identity matrix is:
+Multiplying entry by entry:
 
-```math
-I =
-\begin{pmatrix}
-1 & 0 \\
-0 & 1
-\end{pmatrix}
-```
+$$\large A^2 = \begin{bmatrix} 0 \cdot 0 + 1 \cdot 1 & 0 \cdot 1 + 1 \cdot 0 \\ 1 \cdot 0 + 0 \cdot 1 & 1 \cdot 1 + 0 \cdot 0 \end{bmatrix}$$
 
-The negative identity matrix is:
+Simplifying each entry gives:
 
-```math
--I =
-\begin{pmatrix}
--1 & 0 \\
-0 & -1
-\end{pmatrix}
-```
+$$\large A^2 = \begin{bmatrix} 0 + 1 & 0 + 0 \\ 0 + 0 & 0 + 1 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I$$
 
-Our chosen matrix is different from both.
+Since $A^2 = I$, our matrix $A = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$ is indeed its own inverse ($A^{-1} = A$).
 
-### Step 4. Verify the Condition by Multiplication
-
-We need to check whether:
-
-```math
-A^2 = I
-```
-
-Using our chosen matrix:
-
-```math
-A^2 = A \cdot A
-```
-
-Substituting the matrix:
-
-```math
-A^2 =
-\begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix}
-\begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix}
-```
-
-Multiplying the matrices:
-
-```math
-A^2 =
-\begin{pmatrix}
-0\cdot0+1\cdot1 & 0\cdot1+1\cdot0 \\
-1\cdot0+0\cdot1 & 1\cdot1+0\cdot0
-\end{pmatrix}
-```
-
-Simplifying:
-
-```math
-A^2 =
-\begin{pmatrix}
-1 & 0 \\
-0 & 1
-\end{pmatrix}
-```
-
-Therefore:
-
-```math
-A^2 = I
-```
-
-The condition is satisfied.
-
-### Step 5. Verify That A Is Its Own Inverse
-
-Since we have shown that:
-
-```math
-A \cdot A = I
-```
-
-it follows that:
-
-```math
-A^{-1} = A
-```
-
-Therefore:
-
-```math
-A^{-1} =
-\begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix}
-```
-
-The multiplication confirms that the chosen matrix is its own inverse.
+---
 
 ### Final Answer
 
-For every square matrix satisfying `A^2 = I`:
+1. **Proof:** Since $A^2 = A \cdot A = I$, by the definition and uniqueness of the matrix inverse, we have:
 
-```math
-A^{-1} = A
-```
+$$\large A^{-1} = A$$
 
-One valid example is:
+2. **Example $2 \times 2$ matrix ($\neq I, -I$):**
 
-```math
-A =
-\begin{pmatrix}
-0 & 1 \\
-1 & 0
-\end{pmatrix}
-```
+$$\large A = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$$
 
-Its square is:
+3. **Verification:**
 
-```math
-A^2 =
-\begin{pmatrix}
-1 & 0 \\
-0 & 1
-\end{pmatrix}
-= I
-```
-
-Therefore, the example satisfies the required condition.
-
-### Conclusion
-
-A square matrix whose square is the identity matrix is equal to its own inverse.
-
-The example demonstrates that a matrix different from both `I` and `-I` can also satisfy this property.
-
-The multiplication verification confirms that the result is correct.
+$$\large A^2 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I$$
