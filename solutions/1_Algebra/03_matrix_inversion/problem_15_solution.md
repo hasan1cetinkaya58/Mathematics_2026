@@ -1,407 +1,144 @@
-
 # Exercise 15. Two Methods for Solving the Same System
 
 ## Question
 
-For
+**Given:**
 
-```math
-A =
-\begin{pmatrix}
-2 & 1 \\
-1 & 3
-\end{pmatrix},
-\qquad
-b =
-\begin{pmatrix}
-7 \\
-8
-\end{pmatrix}
-```
+Consider the linear system $Ax = b$, where:
 
-Solve `Ax = b` in two ways:
+$$
+A = \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix}, \qquad b = \begin{bmatrix} 7 \\ 8 \end{bmatrix}
+$$
 
-1. Using `A^(-1)b`.
+**Required:**
+
+Solve $Ax = b$ in two ways:
+1. Using $x = A^{-1}b$.
 2. Using Gaussian elimination.
 
-Compare both solutions, the number of essential steps, and state which method was simpler in this example.
+Then:
+3. Compare both solutions and the number of essential steps.
+4. State which method was simpler in this example.
+
+> **Why this exercise:** Compares two known methods and prepares the student to choose a solution method consciously.
+
+---
 
 ## Solution
 
-### Method 1. Using the Inverse Matrix
-
-### Step 1. Calculate the Determinant of A
-
-First, we calculate the determinant to check whether the inverse exists.
-
-```math
-\det(A) =
-\begin{vmatrix}
-2 & 1 \\
-1 & 3
-\end{vmatrix}
-```
-
-Calculation:
-
-```math
-\det(A) = 2 \cdot 3 - 1 \cdot 1
-```
-
-```math
-\det(A) = 6 - 1 = 5
-```
-
-Since the determinant is not zero, the inverse of A exists.
-
-### Step 2. Find the Inverse of A
-
-We use the inverse formula for a 2×2 matrix:
-
-```math
-A^{-1} =
-\frac{1}{ad-bc}
-\begin{pmatrix}
-d & -b \\
--c & a
-\end{pmatrix}
-```
-
-Substituting the values:
-
-```math
-A^{-1} =
-\frac{1}{5}
-\begin{pmatrix}
-3 & -1 \\
--1 & 2
-\end{pmatrix}
-```
-
-Therefore:
-
-```math
-A^{-1} =
-\begin{pmatrix}
-\frac{3}{5} & -\frac{1}{5} \\
--\frac{1}{5} & \frac{2}{5}
-\end{pmatrix}
-```
-
-### Step 3. Calculate x Using x = A⁻¹b
-
-We use the formula:
-
-```math
-x = A^{-1}b
-```
-
-Substituting the matrices:
-
-```math
-x =
-\begin{pmatrix}
-\frac{3}{5} & -\frac{1}{5} \\
--\frac{1}{5} & \frac{2}{5}
-\end{pmatrix}
-\begin{pmatrix}
-7 \\
-8
-\end{pmatrix}
-```
-
-Calculation:
-
-```math
-x =
-\begin{pmatrix}
-\frac{3}{5}\cdot 7 - \frac{1}{5}\cdot 8 \\
--\frac{1}{5}\cdot 7 + \frac{2}{5}\cdot 8
-\end{pmatrix}
-```
-
-```math
-x =
-\begin{pmatrix}
-\frac{21}{5}-\frac{8}{5} \\
--\frac{7}{5}+\frac{16}{5}
-\end{pmatrix}
-```
-
-Therefore:
+### Step 1. Method 1 — Solve Using Inverse Matrix
 
-```math
-x =
-\begin{pmatrix}
-\frac{13}{5} \\
-\frac{9}{5}
-\end{pmatrix}
-```
+First, we calculate the determinant of $A$:
 
-The solution using the inverse matrix method is:
+$$
+\det(A) = (2)(3) - (1)(1) = 6 - 1 = 5 \neq 0
+$$
 
-```math
-x =
-\begin{pmatrix}
-\frac{13}{5} \\
-\frac{9}{5}
-\end{pmatrix}
-```
+Since $\det(A) = 5 \neq 0$, $A$ is invertible. Using the $2 \times 2$ inverse formula:
 
-## Method 2. Using Gaussian Elimination
+$$
+A^{-1} = \dfrac{1}{\det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix} = \dfrac{1}{5} \begin{bmatrix} 3 & -1 \\ -1 & 2 \end{bmatrix} = \begin{bmatrix} \dfrac{3}{5} & -\dfrac{1}{5} \\ -\dfrac{1}{5} & \dfrac{2}{5} \end{bmatrix}
+$$
 
-### Step 4. Construct the Augmented Matrix
+Now, we compute $x = A^{-1}b$:
 
-We start with the equation `Ax = b` and write the augmented matrix.
+$$
+x = \begin{bmatrix} \dfrac{3}{5} & -\dfrac{1}{5} \\ -\dfrac{1}{5} & \dfrac{2}{5} \end{bmatrix} \begin{bmatrix} 7 \\ 8 \end{bmatrix}
+$$
 
-```math
-[A \mid b] =
-\left[
-\begin{array}{cc|c}
-2 & 1 & 7 \\
-1 & 3 & 8
-\end{array}
-\right]
-```
+Multiplying row by column:
 
-### Step 5. Eliminate the First Entry in the Second Row
+$$
+x = \begin{bmatrix} \dfrac{3}{5} \cdot 7 + \left(-\dfrac{1}{5}\right) \cdot 8 \\ \left(-\dfrac{1}{5}\right) \cdot 7 + \dfrac{2}{5} \cdot 8 \end{bmatrix} = \begin{bmatrix} \dfrac{21 - 8}{5} \\ \dfrac{-7 + 16}{5} \end{bmatrix} = \begin{bmatrix} \dfrac{13}{5} \\ \dfrac{9}{5} \end{bmatrix}
+$$
 
-We apply the row operation:
+Thus, Method 1 gives:
 
-```math
-R_2 \rightarrow 2R_2 - R_1
-```
+$$
+x = \begin{bmatrix} \dfrac{13}{5} \\ \dfrac{9}{5} \end{bmatrix}
+$$
 
-Calculation:
+---### Step 2. Method 2 — Solve Using Gaussian Elimination
 
-```math
-2(1,3,8)-(2,1,7)
-```
-
-```math
-R_2 = (0,5,9)
-```
-
-The new augmented matrix becomes:
+We write the augmented matrix $[A \mid b]$:
 
-```math
-\left[
-\begin{array}{cc|c}
-2 & 1 & 7 \\
-0 & 5 & 9
-\end{array}
-\right]
-```
+$$
+\left[\begin{array}{cc|c} 2 & 1 & 7 \\ 1 & 3 & 8 \end{array}\right]
+$$
 
-### Step 6. Make the Second Pivot Equal to 1
+**Essential Step 1 (Swap $R_1$ and $R_2$ to get pivot $1$ in top-left):**
 
-We divide the second row by 5.
+$$
+R_1 \leftrightarrow R_2 \implies \left[\begin{array}{cc|c} 1 & 3 & 8 \\ 2 & 1 & 7 \end{array}\right]
+$$
 
-```math
-R_2 \rightarrow \frac{1}{5}R_2
-```
-
-The new augmented matrix becomes:
-
-```math
-\left[
-\begin{array}{cc|c}
-2 & 1 & 7 \\
-0 & 1 & \frac{9}{5}
-\end{array}
-\right]
-```
+**Essential Step 2 (Eliminate the entry below the pivot):**
 
-### Step 7. Eliminate the Entry Above the Second Pivot
-
-We apply the row operation:
-
-```math
-R_1 \rightarrow R_1 - R_2
-```
-
-Calculation:
-
-```math
-(2,1,7)-
-\left(0,1,\frac{9}{5}\right)
-```
-
-```math
-R_1 =
-\left(2,0,\frac{26}{5}\right)
-```
-
-The new augmented matrix becomes:
-
-```math
-\left[
-\begin{array}{cc|c}
-2 & 0 & \frac{26}{5} \\
-0 & 1 & \frac{9}{5}
-\end{array}
-\right]
-```
-
-### Step 8. Make the First Pivot Equal to 1
-
-We divide the first row by 2.
-
-```math
-R_1 \rightarrow \frac{1}{2}R_1
-```
-
-The final augmented matrix becomes:
-
-```math
-\left[
-\begin{array}{cc|c}
-1 & 0 & \frac{13}{5} \\
-0 & 1 & \frac{9}{5}
-\end{array}
-\right]
-```
-
-Therefore:
-
-```math
-x_1 = \frac{13}{5},
-\qquad
-x_2 = \frac{9}{5}
-```
-
-The solution using Gaussian elimination is:
-
-```math
-x =
-\begin{pmatrix}
-\frac{13}{5} \\
-\frac{9}{5}
-\end{pmatrix}
-```
-
-### Step 9. Compare Both Solutions
-
-The inverse matrix method gives:
+$$
+R_2 \leftarrow R_2 - 2R_1 \implies \left[\begin{array}{cc|c} 1 & 3 & 8 \\ 0 & -5 & -9 \end{array}\right]
+$$
 
-```math
-x =
-\begin{pmatrix}
-\frac{13}{5} \\
-\frac{9}{5}
-\end{pmatrix}
-```
+**Essential Step 3 (Normalize the second pivot to $1$):**
 
-The Gaussian elimination method gives:
+$$
+R_2 \leftarrow -\dfrac{1}{5}R_2 \implies \left[\begin{array}{cc|c} 1 & 3 & 8 \\ 0 & 1 & \dfrac{9}{5} \end{array}\right]
+$$
 
-```math
-x =
-\begin{pmatrix}
-\frac{13}{5} \\
-\frac{9}{5}
-\end{pmatrix}
-```
+**Essential Step 4 (Back-substitution to eliminate above the second pivot):**
 
-Both methods produce exactly the same solution.
+$$
+R_1 \leftarrow R_1 - 3R_2
+$$
 
-### Step 10. Verify the Result
+Computing the first row's right-hand side:
 
-We substitute the solution into the original equation `Ax = b`.
+$$
+8 - 3 \cdot \dfrac{9}{5} = \dfrac{40 - 27}{5} = \dfrac{13}{5}
+$$
 
-```math
-A x =
-\begin{pmatrix}
-2 & 1 \\
-1 & 3
-\end{pmatrix}
-\begin{pmatrix}
-\frac{13}{5} \\
-\frac{9}{5}
-\end{pmatrix}
-```
+This gives the reduced row echelon form (RREF):
 
-Calculation:
+$$
+\left[\begin{array}{cc|c} 1 & 0 & \dfrac{13}{5} \\ 0 & 1 & \dfrac{9}{5} \end{array}\right]
+$$
 
-```math
-Ax =
-\begin{pmatrix}
-2\cdot\frac{13}{5}+\frac{9}{5} \\
-\frac{13}{5}+3\cdot\frac{9}{5}
-\end{pmatrix}
-```
+Reading the solution directly from the augmented matrix:
 
-```math
-Ax =
-\begin{pmatrix}
-\frac{26}{5}+\frac{9}{5} \\
-\frac{13}{5}+\frac{27}{5}
-\end{pmatrix}
-```
+$$
+x = \begin{bmatrix} \dfrac{13}{5} \\ \dfrac{9}{5} \end{bmatrix}
+$$
 
-```math
-Ax =
-\begin{pmatrix}
-\frac{35}{5} \\
-\frac{40}{5}
-\end{pmatrix}
-```
+---
 
-Therefore:
+### Step 3. Comparison of Both Solutions and Essential Steps
 
-```math
-Ax =
-\begin{pmatrix}
-7 \\
-8
-\end{pmatrix}
-= b
-```
+1. **Solutions:** Both methods produce the exact same solution vector:
 
-The result matches the original vector b, so the solution is correct.
+$$
+x = \begin{bmatrix} \dfrac{13}{5} \\ \dfrac{9}{5} \end{bmatrix}
+$$
 
-## Comparison of the Two Methods
+2. **Number of essential steps:**
+   - **Inverse method ($x = A^{-1}b$):** Requires **3 essential steps**: (1) computing $\det(A)$, (2) forming $A^{-1}$, and (3) multiplying $A^{-1}b$.
+   - **Gaussian elimination:** Requires **4 essential row/elimination steps** (row swap, eliminating below pivot, scaling row 2, and eliminating above pivot / back-substitution).
 
-### Number of Essential Steps
+---
 
-**Inverse Matrix Method:**
+### Step 4. Which Method Was Simpler in This Example?
 
-1. Calculate the determinant.
-2. Find the inverse matrix.
-3. Multiply the inverse matrix by b.
+In this $2 \times 2$ example, **using $x = A^{-1}b$ is slightly simpler and more direct** because:
+- The $2 \times 2$ inverse formula is immediate and gives a common denominator of $5$ right away.
+- It avoids multiple row-operation updates on the augmented matrix and requires one fewer essential step than full row reduction.
+- Note: For larger systems or when solving for multiple right-hand side vectors $b$ with the same $A$, Gaussian elimination / LU factorization is generally preferred.
 
-**Gaussian Elimination:**
+---
 
-1. Construct the augmented matrix.
-2. Perform row operations to obtain the solution.
+### Final Answer
 
-Gaussian elimination required four row operations in this solution.
+$$
+x = \begin{bmatrix} \dfrac{13}{5} \\ \dfrac{9}{5} \end{bmatrix}
+$$
 
-### Which Method Was Simpler?
-
-In this example, Gaussian elimination was simpler because we only needed to solve one system of equations.
-
-The inverse matrix method required calculating the entire inverse matrix before multiplying it by b.
-
-For a single system, Gaussian elimination is more direct. However, the inverse matrix method can be useful when the inverse is already known or when solving several systems with the same matrix A.
-
-## Final Answer
-
-Both methods give the same solution:
-
-```math
-\boxed{
-x =
-\begin{pmatrix}
-\frac{13}{5} \\
-\frac{9}{5}
-\end{pmatrix}
-}
-```
-
-## Conclusion
-
-We solved the same linear system using two different methods: the inverse matrix method and Gaussian elimination.
-
-Both methods produced the same solution, and substitution confirmed that the result satisfies the original equation.
-
-In this example, Gaussian elimination was simpler because it required fewer essential calculations and avoided finding the complete inverse matrix.
+- **Both methods agree:** $x_1 = \dfrac{13}{5}$ and $x_2 = \dfrac{9}{5}$.
+- **Essential steps:** $3$ steps for $x = A^{-1}b$ vs. $4$ steps for Gaussian elimination.
+- **Simpler method here:** Computing $x = A^{-1}b$ is simpler for this single $2 \times 2$ system.
