@@ -1,148 +1,143 @@
 
-## Exercise 2: Distance as the Length of a Vector
+# Exercise 2: Distance as the Length of a Vector
 
-### Question
+## Question
 
-Given the points:
+The points are `A=(1,2,3)` and `B=(4,-2,6)`.
 
-$$
-A=(1,2,3), \qquad B=(4,-2,6)
-$$
+**Required:**
 
-1. Construct the vector \(\overrightarrow{AB}\).
+1. Construct the vector `AB`.
 2. Compute its length.
 3. Compute the distance between the points using the coordinate formula.
 4. Explain why both calculations give the same result.
 
----
+> **Why this exercise:** shows that the point-distance formula comes directly from the length of a difference vector.
 
-### Solution
+## Solution
 
-**1. Constructing the Vector \(\overrightarrow{AB}\)**
+### 1. Constructing the Vector AB
 
-To find the vector from point A to point B, we subtract the coordinates of A from the coordinates of B.
+To construct the vector from point A to point B, we subtract the coordinates of A from the corresponding coordinates of B.
 
 The formula is:
 
-$$
-\overrightarrow{AB}=B-A
-$$
+`AB = B - A`
 
 Substituting the given coordinates:
 
-$$
-\overrightarrow{AB}=(4,-2,6)-(1,2,3)
-$$
+`AB = (4,-2,6) - (1,2,3)`
 
 Subtracting the corresponding components:
 
-$$
-=(4-1,\,-2-2,\,6-3)
-$$
+`AB = (4-1,-2-2,6-3)`
 
 Therefore:
 
-$$
-\boxed{\overrightarrow{AB}=(3,-4,3)}
-$$
+`AB = (3,-4,3)`
 
-**2. Computing the Length of the Vector**
+### 2. Computing the Length of the Vector
 
-The length (magnitude) of a vector in \(\mathbb{R}^3\) is calculated using the Euclidean norm formula:
+The length of a three-dimensional vector is calculated using the following formula:
 
-$$
-\|v\|=\sqrt{x^2+y^2+z^2}
-$$
+`|AB| = sqrt(x^2 + y^2 + z^2)`
 
-We substitute the components of \(\overrightarrow{AB}=(3,-4,3)\):
+We have already calculated the vector:
 
-$$
-\|\overrightarrow{AB}\|
-=\sqrt{3^2+(-4)^2+3^2}
-$$
+`AB = (3,-4,3)`
 
-Squaring each component:
+Substituting its components into the formula:
 
-$$
-=\sqrt{9+16+9}
-$$
+`|AB| = sqrt(3^2 + (-4)^2 + 3^2)`
 
-$$
-=\sqrt{34}
-$$
+Calculating the squares:
 
-Therefore:
+`|AB| = sqrt(9 + 16 + 9)`
 
-$$
-\boxed{\|\overrightarrow{AB}\|=\sqrt{34}}
-$$
+Adding the values:
 
-**3. Computing the Distance Using the Coordinate Formula**
+`|AB| = sqrt(34)`
 
-The distance between two points in three-dimensional space is calculated using:
+Therefore, the length of the vector is:
 
-$$
-d(A,B)=
-\sqrt{(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2}
-$$
+`|AB| = sqrt(34)`
 
-Substituting the coordinates of A and B:
+### 3. Computing the Distance Using the Coordinate Formula
 
-$$
-d(A,B)=
-\sqrt{(4-1)^2+(-2-2)^2+(6-3)^2}
-$$
+The distance between two points in three-dimensional space is calculated using the coordinate distance formula:
 
-Simplifying:
+`d(A,B) = sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)`
 
-$$
-=\sqrt{3^2+(-4)^2+3^2}
-$$
+The given points are:
 
-$$
-=\sqrt{9+16+9}
-$$
+`A = (1,2,3)`
 
-$$
-\boxed{d(A,B)=\sqrt{34}}
-$$
+`B = (4,-2,6)`
 
-**4. Why Do Both Calculations Give the Same Result?**
+Substituting the coordinates into the formula:
 
-Both calculations give the same result because the distance between two points is defined as the length of the vector connecting them.
+`d(A,B) = sqrt((4-1)^2 + (-2-2)^2 + (6-3)^2)`
 
-The vector \(\overrightarrow{AB}\) represents the displacement from point A to point B.
+Calculating the differences:
 
-When we calculate its length, we measure the straight-line distance between these two points.
+`d(A,B) = sqrt(3^2 + (-4)^2 + 3^2)`
 
-In mathematical terms:
+Calculating the squares:
 
-$$
-\overrightarrow{AB}=B-A
-$$
+`d(A,B) = sqrt(9 + 16 + 9)`
 
-The distance is the magnitude of this difference vector:
+Adding the values:
 
-$$
-d(A,B)=\|B-A\|
-$$
+`d(A,B) = sqrt(34)`
 
-Therefore, both methods use exactly the same coordinate differences and the same Euclidean length formula.
+Therefore, the distance between the two points is:
 
----
+`d(A,B) = sqrt(34)`
+
+### 4. Explaining Why Both Calculations Give the Same Result
+
+Both calculations give the same result because the vector `AB` represents the displacement from point A to point B.
+
+The vector is obtained by subtracting the coordinates of A from the coordinates of B:
+
+`AB = B - A = (3,-4,3)`
+
+The length of this vector is calculated using the three-dimensional vector length formula.
+
+The coordinate distance formula uses exactly the same coordinate differences:
+
+`(4-1,-2-2,6-3) = (3,-4,3)`
+
+Therefore, both methods calculate the length of the same displacement vector.
+
+We can verify that:
+
+`|AB| = d(A,B)`
+
+`|AB| = sqrt(34)`
+
+`d(A,B) = sqrt(34)`
+
+Thus, both calculations give the same result because the distance between two points is equal to the length of the vector connecting them.
 
 ### Final Results
 
-$$
-\boxed{\overrightarrow{AB}=(3,-4,3)}
-$$
+The calculated results are:
 
-$$
-\boxed{\|\overrightarrow{AB}\|=\sqrt{34}}
-$$
+**Vector AB:**
 
-$$
-\boxed{d(A,B)=\sqrt{34}\approx 5.83}
-$$
+`AB = (3,-4,3)`
 
-**Conclusion:** The distance between two points is equal to the length of the vector connecting them. The coordinate distance formula comes directly from the Euclidean norm of the difference vector.
+**Length of the vector:**
+
+`|AB| = sqrt(34)`
+
+**Distance between points A and B:**
+
+`d(A,B) = sqrt(34)`
+
+**Conclusion:**
+
+The length of the vector and the distance between the two points are equal. Both methods give the result `sqrt(34)`.
+
+The exercise is solved correctly.
