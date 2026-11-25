@@ -1,25 +1,7 @@
+
+# Exercise 1: Vector Operations and Their Meaning
+
 ## Question
-
-For $u=(2,-1,3)$ and $v=(-1,4,2)$, compute $u+v$, $u-v$, and $3u-2v$; verify $(u+v)-v=u$ and explain vector addition geometrically.
-
-## Solution
-
-Vector operations are performed coordinate by coordinate:
-
-$$u+v=(1,3,5),\qquad u-v=(3,-5,1),$$
-
-$$3u-2v=(6,-3,9)-(-2,8,4)=(8,-11,5).$$
-
-The requested check gives
-
-$$(u+v)-v=(1,3,5)-(-1,4,2)=(2,-1,3)=u.$$
-
-Geometrically, adding vectors means placing the tail of the second vector at the head of the first; the sum is the displacement from the original tail to the final head (equivalently, the diagonal of the parallelogram).
-
-
-## Exercise 1: Vector Operations and Their Meaning
-
-### Question
 
 Given the vectors:
 
@@ -27,59 +9,81 @@ $$
 u = (2,-1,3), \qquad v = (-1,4,2)
 $$
 
-Compute:
+**Required:**
 
-1. \(u+v\)
-2. \(u-v\)
-3. \(3u-2v\)
+1. Compute the sum of the vectors $u+v$.
+2. Compute the difference $u-v$.
+3. Compute the linear combination $3u-2v$.
+4. Verify that $(u+v)-v=u$.
+5. Explain geometrically what adding two vectors means.
 
-Then verify that:
+## Solution
 
-$$
-(u+v)-v=u
-$$
-
-Finally, explain geometrically what adding two vectors means.
-
----
-
-### Solution
-
-**1. Vector Addition: \(u+v\)**
+### 1. Calculating the Sum of the Vectors
 
 To add two vectors, we add their corresponding components.
+
+The formula is:
+
+$$
+u+v=(u_1+v_1,u_2+v_2,u_3+v_3)
+$$
+
+Substituting the given vectors:
 
 $$
 u+v=(2,-1,3)+(-1,4,2)
 $$
 
+Adding the corresponding components:
+
 $$
-=(2-1,\,-1+4,\,3+2)
+u+v=(2-1,-1+4,3+2)
 $$
+
+Therefore:
 
 $$
 \boxed{u+v=(1,3,5)}
 $$
 
-**2. Vector Subtraction: \(u-v\)**
+### 2. Calculating the Difference of the Vectors
 
 To subtract two vectors, we subtract their corresponding components.
+
+The formula is:
+
+$$
+u-v=(u_1-v_1,u_2-v_2,u_3-v_3)
+$$
+
+Substituting the given vectors:
 
 $$
 u-v=(2,-1,3)-(-1,4,2)
 $$
 
+Subtracting the corresponding components:
+
 $$
-=(2+1,\,-1-4,\,3-2)
+u-v=(2+1,-1-4,3-2)
 $$
+
+Therefore:
 
 $$
 \boxed{u-v=(3,-5,1)}
 $$
 
-**3. Scalar Multiplication and Subtraction: \(3u-2v\)**
+### 3. Calculating the Linear Combination
 
-First, multiply each vector by its scalar.
+We need to calculate:
+
+$$
+3u-2v
+$$
+
+First, multiply each vector by its scalar:
 
 $$
 3u=3(2,-1,3)=(6,-3,9)
@@ -89,45 +93,57 @@ $$
 2v=2(-1,4,2)=(-2,8,4)
 $$
 
-Now subtract the resulting vectors.
+Now subtract the resulting vectors:
 
 $$
 3u-2v=(6,-3,9)-(-2,8,4)
 $$
 
-$$
-=(6+2,\,-3-8,\,9-4)
-$$
+Subtracting the corresponding components:
 
 $$
-\boxed{3u-2v=(8,-11,5)}
-$$
-
-**4. Verification: \((u+v)-v=u\)**
-
-We substitute the original vectors and calculate.
-
-From the first calculation:
-
-$$
-u+v=(1,3,5)
+3u-2v=(6+2,-3-8,9-4)
 $$
 
 Therefore:
 
 $$
+\boxed{3u-2v=(8,-11,5)}
+$$
+
+### 4. Verifying the Vector Identity
+
+We need to verify that:
+
+$$
+(u+v)-v=u
+$$
+
+From the first calculation, we know that:
+
+$$
+u+v=(1,3,5)
+$$
+
+Substituting this result:
+
+$$
 (u+v)-v=(1,3,5)-(-1,4,2)
 $$
 
-$$
-=(1+1,\,3-4,\,5-2)
-$$
+Subtracting the corresponding components:
 
 $$
-=(2,-1,3)
+(u+v)-v=(1+1,3-4,5-2)
 $$
 
-Since:
+Therefore:
+
+$$
+(u+v)-v=(2,-1,3)
+$$
+
+Since the original vector is:
 
 $$
 u=(2,-1,3)
@@ -139,42 +155,45 @@ $$
 \boxed{(u+v)-v=u}
 $$
 
-The identity is verified.
+The identity is verified because both sides are equal.
 
-**5. Geometric Interpretation**
+### 5. Geometric Interpretation of Vector Addition
 
-Geometrically, adding two vectors means combining their directions and magnitudes.
+Geometrically, adding two vectors means combining their magnitudes and directions according to the rules of vector addition.
 
-The result can be understood using the **head-to-tail method**:
+There are two common ways to visualize this:
 
-- First, draw vector \(u\).
-- Then, place the starting point of vector \(v\) at the endpoint of \(u\).
-- The resultant vector \(u+v\) starts at the beginning of \(u\) and ends at the endpoint of \(v\).
+- **Head-to-tail method:** Place the starting point of the second vector at the endpoint of the first vector. The resulting vector starts at the beginning of the first vector and ends at the endpoint of the second vector.
+- **Parallelogram method:** Place both vectors at the same starting point. The diagonal of the parallelogram represents their sum.
 
-This is also known as the triangle rule of vector addition.
-
-Vector addition can also be represented using the parallelogram rule.
-
-In this exercise, the vectors are in \(\mathbb{R}^3\), so their geometric representation is in three-dimensional space.
-
----
+The resulting vector represents the combined displacement produced by the two original vectors.
 
 ### Final Results
+
+The calculated vector operations are:
+
+**Vector sum:**
 
 $$
 \boxed{u+v=(1,3,5)}
 $$
 
+**Vector difference:**
+
 $$
 \boxed{u-v=(3,-5,1)}
 $$
+
+**Linear combination:**
 
 $$
 \boxed{3u-2v=(8,-11,5)}
 $$
 
+**Verification:**
+
 $$
 \boxed{(u+v)-v=u}
 $$
 
-**Conclusion:** Vector operations are performed component by component. Geometrically, vector addition combines two displacements into one resultant displacement, while subtraction reverses the direction of the vector being subtracted.
+All calculations are correct, and the vector identity is verified.
