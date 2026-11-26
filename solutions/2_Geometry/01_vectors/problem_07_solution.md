@@ -1,128 +1,121 @@
-## Exercise 7: Linear Dependence Without Heavy Computation
 
-### Question
+# Exercise 7: Linear Dependence Without Heavy Computation
 
-Given the vectors:
+## Question
 
-$$
-u=(1,2,3)
-$$
+**Given the vectors:**
 
 $$
-v=(2,4,6)
+u = (1, 2, 3)
 $$
 
 $$
-w=(0,1,1)
+v = (2, 4, 6)
 $$
 
-1. Identify a specific relation between \(u\) and \(v\).
+$$
+w = (0, 1, 1)
+$$
+
+**Required:**
+
+1. Identify a specific relation between `u` and `v`.
 2. Decide whether the three vectors can be linearly independent.
 3. Explain why no long calculation is needed.
 
 ---
 
-### Solution
+## Solution
 
-**1. Identifying the Relationship Between \(u\) and \(v\)**
+### 1. Identifying the Relationship Between `u` and `v`
 
 First, compare the corresponding components of the two vectors.
 
 We have:
 
 $$
-u=(1,2,3)
+u = (1, 2, 3)
 $$
 
 $$
-v=(2,4,6)
+v = (2, 4, 6)
 $$
 
-Each component of \(v\) is twice the corresponding component of \(u\).
+Each component of `v` is twice the corresponding component of `u`.
 
 Therefore:
 
 $$
-v=2u
+v = 2u
 $$
 
-We can verify this by multiplying \(u\) by 2:
+We can verify this by multiplying `u` by 2:
 
 $$
-2u=2(1,2,3)
-$$
-
-$$
-=(2,4,6)
+2u = 2(1, 2, 3) = (2, 4, 6)
 $$
 
 Since:
 
 $$
-2u=v
+2u = v
 $$
 
-The relationship is confirmed.
+the relationship is confirmed.
 
 An equivalent linear relation is:
 
 $$
-\boxed{2u-v=0}
+2u - v = 0
 $$
 
-**2. Determining Whether the Three Vectors Are Linearly Independent**
+### 2. Determining Whether the Three Vectors Are Linearly Independent
 
 A set of vectors is linearly independent if the only solution to the equation
 
 $$
-a u+b v+c w=0
+au + bv + cw = 0
 $$
 
 is:
 
-$$
-a=0,\qquad b=0,\qquad c=0
-$$
+`a = 0`, `b = 0`, and `c = 0`.
 
 However, we have already found that:
 
 $$
-2u-v=0
+2u - v = 0
 $$
 
-This is a nontrivial linear combination because the coefficients 2 and -1 are not both zero.
+This is a nontrivial linear combination because the coefficients `2` and `-1` are not both zero.
 
 We can also include the third vector:
 
 $$
-2u-v+0w=0
+2u - v + 0w = 0
 $$
 
 Therefore, there exists a nontrivial linear combination of the three vectors that equals the zero vector.
 
-This means:
-
-$$
-\boxed{\text{The three vectors are linearly dependent.}}
-$$
+This means that the three vectors are **linearly dependent**.
 
 They cannot be linearly independent.
 
-**3. Why Is No Long Calculation Needed?**
+### 3. Why Is No Long Calculation Needed?
 
 The key observation is that one vector is a scalar multiple of another.
 
 Since:
 
 $$
-v=2u
+v = 2u
 $$
 
-The vectors \(u\) and \(v\) already have a linear dependence relationship.
+the vectors `u` and `v` already have a linear dependence relationship.
 
 This means that one of the vectors does not provide a new independent direction.
 
-Adding a third vector \(w\) cannot remove the existing linear dependence between \(u\) and \(v\).
+Adding a third vector `w` cannot remove the existing linear dependence between `u` and `v`.
 
 Therefore, there is no need to calculate a determinant or solve a large system of equations.
 
@@ -130,24 +123,20 @@ Recognizing the scalar multiple is sufficient to prove linear dependence.
 
 ---
 
-### Final Results
+## Final Results
 
-Relationship between the vectors:
-
-$$
-\boxed{v=2u}
-$$
-
-Nontrivial linear combination:
+**Relationship between the vectors:**
 
 $$
-\boxed{2u-v+0w=0}
+v = 2u
 $$
 
-Final conclusion:
+**Nontrivial linear combination:**
 
 $$
-\boxed{\text{The vectors are linearly dependent.}}
+2u - v + 0w = 0
 $$
 
-**Conclusion:** A
+**Final conclusion:**
+
+The three vectors are **linearly dependent**, not linearly independent.
