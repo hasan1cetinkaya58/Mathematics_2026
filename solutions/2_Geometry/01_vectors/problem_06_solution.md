@@ -1,190 +1,177 @@
-## Exercise 6: Projection and Perpendicular Component
 
-### Question
+# Exercise 6: Projection and Perpendicular Component
 
-Given the vectors:
+## Question
 
-$$
-u=(4,2), \qquad v=(1,1)
-$$
+Given the vectors `u=(4,2)` and `v=(1,1)`, find the projection of `u` onto the direction of `v`.
 
-1. Find the projection of \(u\) onto the direction of \(v\).
-2. Compute the perpendicular component:
+Then calculate the perpendicular component:
 
-$$
-r=u-p
-$$
+`r = u - proj_v(u)`
 
-where \(p\) is the projection of \(u\) onto \(v\).
+Verify that:
 
-3. Verify that \(r\cdot v=0\).
-4. Explain this result geometrically.
+`r·v = 0`
 
----
+Finally, explain the geometric meaning of this result.
 
-### Solution
+> **Why this exercise:** shows projection as a decomposition into parallel and perpendicular components.
 
-**1. Finding the Projection of \(u\) onto \(v\)**
+## Solution
 
-The projection of vector \(u\) onto vector \(v\) represents the component of \(u\) that lies in the direction of \(v\).
+### 1. Calculating the Projection of u onto v
 
-We denote the projection by \(p\).
+To find the projection of vector `u` onto the direction of vector `v`, we use the vector projection formula:
 
-The projection formula is:
+`proj_v(u) = (u·v / v·v)v`
 
-$$
-p=\frac{u\cdot v}{v\cdot v}v
-$$
+The given vectors are:
 
-First, calculate the dot product of \(u\) and \(v\):
+`u=(4,2)`
 
-$$
-u\cdot v=(4)(1)+(2)(1)
-$$
+`v=(1,1)`
 
-$$
-=4+2=6
-$$
+First, calculate the dot product of `u` and `v`:
 
-Next, calculate the dot product of \(v\) with itself:
+`u·v = 4*1 + 2*1`
 
-$$
-v\cdot v=(1)(1)+(1)(1)
-$$
+`u·v = 4 + 2`
 
-$$
-=1+1=2
-$$
+`u·v = 6`
+
+Next, calculate the dot product of `v` with itself:
+
+`v·v = 1*1 + 1*1`
+
+`v·v = 1 + 1`
+
+`v·v = 2`
 
 Now substitute these values into the projection formula:
 
-$$
-p=\frac{6}{2}(1,1)
-$$
+`proj_v(u) = (6/2)(1,1)`
 
-$$
-=3(1,1)
-$$
+Simplifying:
 
-Therefore:
+`proj_v(u) = 3(1,1)`
 
-$$
-\boxed{p=(3,3)}
-$$
+Multiplying each component by 3:
 
-**2. Computing the Perpendicular Component**
+`proj_v(u) = (3,3)`
+
+Therefore, the projection of `u` onto `v` is:
+
+`proj_v(u) = (3,3)`
+
+### 2. Calculating the Perpendicular Component
 
 The perpendicular component is obtained by subtracting the projection from the original vector.
 
 The formula is:
 
-$$
-r=u-p
-$$
+`r = u - proj_v(u)`
 
 Substituting the calculated values:
 
-$$
-r=(4,2)-(3,3)
-$$
+`r = (4,2) - (3,3)`
 
 Subtracting the corresponding components:
 
-$$
-r=(4-3,\,2-3)
-$$
+`r = (4-3, 2-3)`
 
 Therefore:
 
-$$
-\boxed{r=(1,-1)}
-$$
+`r = (1,-1)`
 
-**3. Verifying That the Perpendicular Component Is Orthogonal to \(v\)**
+This is the component of `u` perpendicular to the direction of `v`.
 
-To verify that \(r\) is perpendicular to \(v\), we calculate their dot product.
+### 3. Verifying Perpendicularity Using the Dot Product
 
-We have:
+Two vectors are perpendicular if their dot product is equal to zero.
 
-$$
-r=(1,-1), \qquad v=(1,1)
-$$
+The condition is:
 
-Using the dot product formula:
+`r·v = 0`
 
-$$
-r\cdot v=(1)(1)+(-1)(1)
-$$
+We have calculated:
 
-$$
-=1-1
-$$
+`r = (1,-1)`
 
-$$
-=0
-$$
+`v = (1,1)`
+
+Now calculate their dot product:
+
+`r·v = 1*1 + (-1)*1`
+
+Simplifying:
+
+`r·v = 1 - 1`
 
 Therefore:
 
-$$
-\boxed{r\cdot v=0}
-$$
+`r·v = 0`
 
-Since the dot product is zero, the vectors are perpendicular.
+This confirms that the perpendicular component is indeed perpendicular to `v`.
 
-The result is verified.
+### 4. Geometric Interpretation
 
-**4. Geometric Interpretation**
+The original vector `u` can be decomposed into two components:
 
-The original vector \(u\) can be decomposed into two components:
+- The parallel component is the projection of `u` onto `v`, which is `(3,3)`.
+- The perpendicular component is `r=(1,-1)`.
 
-- The projection \(p=(3,3)\), which is parallel to \(v\).
-- The perpendicular component \(r=(1,-1)\), which is orthogonal to \(v\).
+The original vector is reconstructed by adding these two components:
 
-This means that the original vector is the sum of its parallel and perpendicular components.
-
-Mathematically:
-
-$$
-u=p+r
-$$
+`u = proj_v(u) + r`
 
 Substituting the values:
 
-$$
-(4,2)=(3,3)+(1,-1)
-$$
+`u = (3,3) + (1,-1)`
 
-This decomposition shows that the projection represents the part of \(u\) in the direction of \(v\), while \(r\) represents the remaining perpendicular part.
+Adding the corresponding components:
 
-Geometrically, the projection is the closest point on the line through the origin in the direction of \(v\) to the endpoint of \(u\).
+`u = (4,2)`
 
----
+This gives us the original vector.
 
-### Final Results
+Geometrically, the projection represents the part of `u` that points along the direction of `v`.
 
-Projection:
+The remaining component is perpendicular to `v`, forming a right angle with it.
 
-$$
-\boxed{p=(3,3)}
-$$
+Therefore, the original vector is separated into two perpendicular components: one parallel to `v` and one perpendicular to `v`.
 
-Perpendicular component:
+## Final Results
 
-$$
-\boxed{r=(1,-1)}
-$$
+**Original vector:**
 
-Verification:
+`u = (4,2)`
 
-$$
-\boxed{r\cdot v=0}
-$$
+**Direction vector:**
 
-Vector decomposition:
+`v = (1,1)`
 
-$$
-\boxed{u=(3,3)+(1,-1)}
-$$
+**Projection of u onto v:**
 
-**Conclusion:** A vector can be decomposed into parallel and perpendicular components relative to another vector. The projection gives the parallel component, while subtracting it from the original vector gives the perpendicular component. Their dot product is zero, confirming their orthogonality.
+`proj_v(u) = (3,3)`
+
+**Perpendicular component:**
+
+`r = (1,-1)`
+
+**Perpendicularity verification:**
+
+`r·v = 0`
+
+**Reconstruction:**
+
+`u = (3,3) + (1,-1) = (4,2)`
+
+**Conclusion:**
+
+The vector `u` can be decomposed into a parallel component and a perpendicular component relative to `v`.
+
+The projection gives the parallel component, while subtracting it from the original vector gives the perpendicular component.
+
+Both components reconstruct the original vector, and the dot product confirms that they are perpendicular.
+
+The exercise is solved correctly.
