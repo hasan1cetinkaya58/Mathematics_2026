@@ -1,231 +1,76 @@
-
 # Exercise 1. Line Through Two Points
 
 ## Question
 
 **Given:**
 
-Two points in the plane:
+Two points in $\mathbb{R}^2$:
 
-`A = (1, 2)` and `B = (4, -1)`.
+$$A = (1, 2), \qquad B = (4, -1)$$
 
 **Required:**
 
-1. Find the equation of the line in parametric form.
-2. Find the equation of the line in general form.
-3. Identify a direction vector and an example of a normal vector.
-4. Check that both points satisfy the equation of the line.
+1. Find the equation of the line through $A$ and $B$ in parametric and general form.
+2. Identify a direction vector and an example of a normal vector.
+3. Check that both points satisfy the equation obtained.
+
+> **Why this exercise:** Teaches how to move between equivalent descriptions of a line and connect them with the appropriate vectors.
+
+---
 
 ## Solution
 
-### 1. Finding the Direction Vector
+### Step 1. Direction Vector and Parametric Form
 
-A direction vector describes the direction in which a line moves.
+A direction vector $d$ is given by the displacement vector from $A$ to $B$:
 
-Since the line passes through points `A` and `B`, we can find its direction vector by subtracting the coordinates of `A` from the coordinates of `B`.
+$$d = \overrightarrow{AB} = B - A = (4 - 1,\ -1 - 2) = (3, -3)$$
 
-The formula is:
+Using point $A = (1, 2)$ and direction vector $d = (3, -3)$, the vector parametric equation of the line is:
 
-`v = B - A`
+$$(x, y) = (1, 2) + t(3, -3), \qquad t \in \mathbb{R}$$
 
-Substitute the coordinates:
+Equivalently, in component (scalar parametric) form:
 
-`v = (4 - 1, -1 - 2)`
+$$x = 1 + 3t, \qquad y = 2 - 3t, \qquad t \in \mathbb{R}$$
 
-Therefore:
+---
 
-`v = (3, -3)`
+### Step 2. Normal Vector and General Form
 
-We can simplify this vector by dividing both components by `3`:
+A normal vector $n = (n_1, n_2)$ must be orthogonal to $d = (3, -3)$, meaning $n \cdot d = 0$. Choosing $n = (1, 1)$ satisfies:
 
-`v = (1, -1)`
+$$n \cdot d = 1 \cdot 3 + 1 \cdot (-3) = 3 - 3 = 0$$
 
-Both vectors represent the same direction. We will use the simpler vector `v = (1, -1)` in the next steps.
+Using the point-normal equation $n \cdot ((x, y) - A) = 0$ with $n = (1, 1)$ and $A = (1, 2)$:
 
-### 2. Finding the Parametric Equation
+$$1(x - 1) + 1(y - 2) = 0 \implies x + y - 3 = 0$$
 
-The parametric form describes a line using:
+Thus, the general form of the line is:
 
-- A known point on the line.
-- A direction vector.
-- A real parameter `t`.
+$$x + y - 3 = 0$$
 
-The general formula is:
+---
 
-`(x, y) = A + t v`
+### Step 3. Verification of Both Points
 
-We know that:
+Substitute the coordinates of $A$ and $B$ into the general equation $x + y - 3 = 0$:
 
-`A = (1, 2)`
+- **At $A = (1, 2)$:**
 
-`v = (1, -1)`
+$$1 + 2 - 3 = 0 \quad (\text{satisfied})$$
 
-Substitute these values into the formula:
+- **At $B = (4, -1)$:**
 
-`(x, y) = (1, 2) + t(1, -1)`
+$$4 + (-1) - 3 = 0 \quad (\text{satisfied})$$
 
-Now compare the coordinates:
+Both points lie on the line.
 
-`x = 1 + t`
+---
 
-`y = 2 - t`
+### Final Answer
 
-Therefore, the parametric equation of the line is:
-
-`x = 1 + t`
-
-`y = 2 - t`
-
-where `t` can be any real number.
-
-**Explanation:**
-
-When `t = 0`, we get point `A = (1, 2)`.
-
-When `t = 3`, we get point `B = (4, -1)`.
-
-This shows that both given points lie on the parametric line.
-
-### 3. Finding the General Equation
-
-The general form of a line in two dimensions is:
-
-`ax + by + c = 0`
-
-To find this equation, we first calculate the slope of the line.
-
-The slope formula is:
-
-`m = (y2 - y1) / (x2 - x1)`
-
-Using points `A = (1, 2)` and `B = (4, -1)`:
-
-`m = (-1 - 2) / (4 - 1)`
-
-`m = -3 / 3`
-
-Therefore:
-
-`m = -1`
-
-Now we use the point-slope formula:
-
-`y - y1 = m(x - x1)`
-
-Substitute the slope and the coordinates of point `A`:
-
-`y - 2 = -1(x - 1)`
-
-Expand the right-hand side:
-
-`y - 2 = -x + 1`
-
-Move all terms to the left-hand side:
-
-`x + y - 3 = 0`
-
-Therefore, the general equation of the line is:
-
-`x + y - 3 = 0`
-
-### 4. Identifying a Normal Vector
-
-A normal vector is perpendicular to the line.
-
-For a line written in general form:
-
-`ax + by + c = 0`
-
-A normal vector can be obtained directly from the coefficients of `x` and `y`:
-
-`n = (a, b)`
-
-Our general equation is:
-
-`x + y - 3 = 0`
-
-The coefficients are:
-
-`a = 1` and `b = 1`
-
-Therefore, one example of a normal vector is:
-
-`n = (1, 1)`
-
-We can verify that the normal vector is perpendicular to the direction vector by calculating their dot product.
-
-The direction vector is:
-
-`v = (1, -1)`
-
-The normal vector is:
-
-`n = (1, 1)`
-
-Their dot product is:
-
-`v · n = (1)(1) + (-1)(1)`
-
-`v · n = 1 - 1`
-
-`v · n = 0`
-
-Since the dot product is zero, the two vectors are perpendicular.
-
-This confirms that `n = (1, 1)` is a valid normal vector.
-
-### 5. Checking the Given Points
-
-Finally, we substitute both given points into the general equation:
-
-`x + y - 3 = 0`
-
-If the equation is satisfied, the point lies on the line.
-
-**Checking point A = (1, 2):**
-
-Substitute `x = 1` and `y = 2`:
-
-`1 + 2 - 3 = 0`
-
-`0 = 0`
-
-Therefore, point `A` satisfies the equation.
-
-**Checking point B = (4, -1):**
-
-Substitute `x = 4` and `y = -1`:
-
-`4 + (-1) - 3 = 0`
-
-`4 - 1 - 3 = 0`
-
-`0 = 0`
-
-Therefore, point `B` also satisfies the equation.
-
-Both points satisfy the general equation, so the line passes through the two given points.
-
-## Final Answer
-
-- **Parametric form:**
-
-  `x = 1 + t`
-
-  `y = 2 - t`
-
-- **General form:**
-
-  `x + y - 3 = 0`
-
-- **Direction vector:**
-
-  `v = (1, -1)`
-
-- **Normal vector:**
-
-  `n = (1, 1)`
-
-- **Verification:** Both points `A = (1, 2)` and `B = (4, -1)` satisfy the general equation.
-
-Therefore, the required line has been correctly described in both parametric and general forms.
+- **Parametric form:** $x = 1 + 3t,\ y = 2 - 3t$ ($t \in \mathbb{R}$)
+- **General form:** $x + y - 3 = 0$
+- **Direction vector:** $d = (3, -3)$ (or $(1, -1)$)
+- **Normal vector:** $n = (1, 1)$
