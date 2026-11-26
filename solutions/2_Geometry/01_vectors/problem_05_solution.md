@@ -1,187 +1,118 @@
-## Exercise 5: Angle Between Vectors
 
-### Question
+## Question
 
-Given the vectors:
+### Exercise 5. Angle Between Vectors
 
-$$
-u=(1,1,0), \qquad v=(1,0,1)
-$$
+Given `u=(1,1,0)` and `v=(1,0,1)`:
 
-1. Use the sign of \(u\cdot v\) to predict the type of angle.
-2. Compute the angle between the vectors.
+1. Use the sign of `u·v` to predict the type of angle.
+2. Compute the angle.
 3. Compare the result with the prediction.
 
----
+> **Why this exercise:** teaches how to extract qualitative information first and only then perform the exact calculation.
 
-### Solution
+## Solution
 
-**1. Predicting the Type of Angle Using the Dot Product**
+### 1. Predicting the Type of Angle
 
-First, calculate the dot product of the two vectors.
+The given vectors are:
 
-The dot product formula is:
+`u=(1,1,0)`
 
-$$
-u\cdot v=u_1v_1+u_2v_2+u_3v_3
-$$
+`v=(1,0,1)`
 
-Substituting the given vectors:
+The dot product is calculated by multiplying corresponding components and adding the results.
 
-$$
-u\cdot v=(1)(1)+(1)(0)+(0)(1)
-$$
-
-$$
-=1+0+0
-$$
-
-$$
-\boxed{u\cdot v=1}
-$$
-
-The sign of the dot product tells us the type of angle between two nonzero vectors:
-
-- If the dot product is positive, the angle is acute.
-- If the dot product is zero, the angle is right.
-- If the dot product is negative, the angle is obtuse.
-
-Since:
-
-$$
-u\cdot v=1>0
-$$
-
-We predict that the angle between the vectors is acute.
-
-**2. Computing the Angle Between the Vectors**
-
-To calculate the exact angle, we use the dot product formula:
-
-$$
-u\cdot v=\|u\|\|v\|\cos\theta
-$$
-
-Rearranging the formula to find the angle:
-
-$$
-\cos\theta=\frac{u\cdot v}{\|u\|\|v\|}
-$$
-
-Therefore:
-
-$$
-\theta=\cos^{-1}\left(
-\frac{u\cdot v}{\|u\|\|v\|}
-\right)
-$$
-
-First, calculate the length of vector \(u\):
-
-$$
-\|u\|=\sqrt{1^2+1^2+0^2}
-$$
-
-$$
-=\sqrt{1+1+0}
-$$
-
-$$
-\|u\|=\sqrt{2}
-$$
-
-Next, calculate the length of vector \(v\):
-
-$$
-\|v\|=\sqrt{1^2+0^2+1^2}
-$$
-
-$$
-=\sqrt{1+0+1}
-$$
-
-$$
-\|v\|=\sqrt{2}
-$$
-
-Now substitute the values into the angle formula:
-
-$$
-\theta=\cos^{-1}\left(
-\frac{1}{\sqrt{2}\cdot\sqrt{2}}
-\right)
-$$
+`u·v = 1*1 + 1*0 + 0*1`
 
 Simplifying:
 
-$$
-=\cos^{-1}\left(\frac{1}{2}\right)
-$$
+`u·v = 1 + 0 + 0`
+
+Therefore:
+
+`u·v = 1`
+
+Since the dot product is positive, the angle between the vectors is acute (less than 90 degrees).
+
+### 2. Computing the Angle
+
+The formula for the angle between two vectors is:
+
+`cos(theta) = (u·v) / (|u|*|v|)`
+
+First, we calculate the length of vector `u`:
+
+`|u| = sqrt(1^2 + 1^2 + 0^2)`
+
+`|u| = sqrt(1 + 1 + 0)`
+
+`|u| = sqrt(2)`
+
+Next, we calculate the length of vector `v`:
+
+`|v| = sqrt(1^2 + 0^2 + 1^2)`
+
+`|v| = sqrt(1 + 0 + 1)`
+
+`|v| = sqrt(2)`
+
+Now we substitute the values into the angle formula:
+
+`cos(theta) = 1 / (sqrt(2)*sqrt(2))`
+
+Simplifying:
+
+`cos(theta) = 1/2`
+
+To find the angle, we take the inverse cosine:
+
+`theta = arccos(1/2)`
+
+Therefore:
+
+`theta = 60 degrees`
+
+### 3. Comparing the Result with the Prediction
+
+In the first step, we predicted that the angle would be acute because the dot product was positive.
+
+The calculated angle is:
+
+`theta = 60 degrees`
 
 Since:
 
-$$
-\cos 60^\circ=\frac{1}{2}
-$$
+`60 < 90`
 
-We obtain:
+The angle is acute.
 
-$$
-\boxed{\theta=60^\circ}
-$$
+Therefore, the calculation confirms our initial prediction.
 
-**3. Comparing the Result with the Prediction**
-
-In the first part, the dot product was positive:
-
-$$
-u\cdot v=1>0
-$$
-
-Therefore, we predicted that the angle would be acute.
-
-In the second part, we calculated the exact angle:
-
-$$
-\theta=60^\circ
-$$
-
-Since:
-
-$$
-0^\circ<60^\circ<90^\circ
-$$
-
-The calculated angle is acute.
-
-Therefore, the prediction is correct.
-
----
-
-### Final Results
+### 4. Final Results
 
 Dot product:
 
-$$
-\boxed{u\cdot v=1}
-$$
+`u·v = 1`
 
-Vector lengths:
+Length of vector `u`:
 
-$$
-\boxed{\|u\|=\sqrt{2},\quad \|v\|=\sqrt{2}}
-$$
+`|u| = sqrt(2)`
 
-Angle:
+Length of vector `v`:
 
-$$
-\boxed{\theta=60^\circ}
-$$
+`|v| = sqrt(2)`
 
-Prediction:
+Cosine of the angle:
 
-$$
-\boxed{\text{Acute angle}}
-$$
+`cos(theta) = 1/2`
 
-**Conclusion:** The sign of the dot product allows us to predict whether the angle between two nonzero vectors is acute, right, or obtuse. The dot product formula then gives us the exact angle. In this exercise, the positive dot product correctly predicted an acute angle of \(60^\circ\).
+Angle between the vectors:
+
+`theta = 60 degrees`
+
+**Conclusion:**
+
+The positive dot product indicates that the angle between the vectors is acute. The exact calculation gives an angle of 60 degrees, confirming the prediction.
+
+The exercise is solved correctly.
