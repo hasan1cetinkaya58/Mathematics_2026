@@ -5,17 +5,9 @@
 
 **Given the vectors:**
 
-$$
-u = (1, 2, 3)
-$$
-
-$$
-v = (2, 4, 6)
-$$
-
-$$
-w = (0, 1, 1)
-$$
+- `u = (1, 2, 3)`
+- `v = (2, 4, 6)`
+- `w = (0, 1, 1)`
 
 **Required:**
 
@@ -33,49 +25,31 @@ First, compare the corresponding components of the two vectors.
 
 We have:
 
-$$
-u = (1, 2, 3)
-$$
+`u = (1, 2, 3)`
 
-$$
-v = (2, 4, 6)
-$$
+`v = (2, 4, 6)`
 
 Each component of `v` is twice the corresponding component of `u`.
 
 Therefore:
 
-$$
-v = 2u
-$$
+`v = 2u`
 
 We can verify this by multiplying `u` by 2:
 
-$$
-2u = 2(1, 2, 3) = (2, 4, 6)
-$$
+`2u = 2(1, 2, 3) = (2, 4, 6)`
 
-Since:
-
-$$
-2u = v
-$$
-
-the relationship is confirmed.
+Since `2u = v`, the relationship is confirmed.
 
 An equivalent linear relation is:
 
-$$
-2u - v = 0
-$$
+`2u - v = 0`
 
 ### 2. Determining Whether the Three Vectors Are Linearly Independent
 
 A set of vectors is linearly independent if the only solution to the equation
 
-$$
-au + bv + cw = 0
-$$
+`au + bv + cw = 0`
 
 is:
 
@@ -83,17 +57,13 @@ is:
 
 However, we have already found that:
 
-$$
-2u - v = 0
-$$
+`2u - v = 0`
 
 This is a nontrivial linear combination because the coefficients `2` and `-1` are not both zero.
 
 We can also include the third vector:
 
-$$
-2u - v + 0w = 0
-$$
+`2u - v + 0w = 0`
 
 Therefore, there exists a nontrivial linear combination of the three vectors that equals the zero vector.
 
@@ -107,9 +77,7 @@ The key observation is that one vector is a scalar multiple of another.
 
 Since:
 
-$$
-v = 2u
-$$
+`v = 2u`
 
 the vectors `u` and `v` already have a linear dependence relationship.
 
@@ -127,15 +95,11 @@ Recognizing the scalar multiple is sufficient to prove linear dependence.
 
 **Relationship between the vectors:**
 
-$$
-v = 2u
-$$
+`v = 2u`
 
 **Nontrivial linear combination:**
 
-$$
-2u - v + 0w = 0
-$$
+`2u - v + 0w = 0`
 
 **Final conclusion:**
 
