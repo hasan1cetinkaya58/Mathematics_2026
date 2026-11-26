@@ -1,197 +1,144 @@
-## Exercise 4: Dot Product and Perpendicularity
 
-### Question
+## Question
 
-Given the vectors:
+### Exercise 4. Dot Product and Perpendicularity
 
-$$
-u=(1,2,-1), \qquad v=(2,-1,3)
-$$
+For `u=(1,2,-1)` and `v=(2,-1,3)`, compute `u·v` and determine whether the vectors are perpendicular.
 
-1. Compute the dot product \(u\cdot v\) and determine whether the vectors are perpendicular.
-2. Find \(a\) so that \(w=(2,-1,a)\) is perpendicular to \(u\).
-3. Check the result.
+Then find `a` so that `w=(2,-1,a)` is perpendicular to `u`, and check the result.
 
----
+> **Why this exercise:** shows the dot product as both a test and a tool for constructing a perpendicularity condition.
 
-### Solution
+## Solution
 
-**1. Computing the Dot Product and Checking Perpendicularity**
+### 1. Computing the Dot Product
 
-The dot product of two vectors in \(\mathbb{R}^3\) is calculated by multiplying their corresponding components and adding the results.
+The given vectors are:
+
+`u=(1,2,-1)`
+
+`v=(2,-1,3)`
+
+The dot product of two vectors is calculated by multiplying their corresponding components and adding the results.
 
 The formula is:
 
-$$
-u\cdot v=u_1v_1+u_2v_2+u_3v_3
-$$
+`u·v = u1*v1 + u2*v2 + u3*v3`
 
-Substituting the given vectors:
+Substituting the given components:
 
-$$
-u\cdot v=(1)(2)+(2)(-1)+(-1)(3)
-$$
+`u·v = 1*2 + 2*(-1) + (-1)*3`
 
-Multiplying the corresponding components:
+Calculating each multiplication:
 
-$$
-=2-2-3
-$$
-
-$$
-\boxed{u\cdot v=-3}
-$$
-
-Two nonzero vectors are perpendicular if and only if their dot product is equal to zero.
-
-Since:
-
-$$
-u\cdot v=-3\neq 0
-$$
+`u·v = 2 - 2 - 3`
 
 Therefore:
 
-$$
-\boxed{\text{The vectors are not perpendicular.}}
-$$
+`u·v = -3`
 
-**2. Finding the Value of \(a\)**
+### 2. Determining Whether the Vectors Are Perpendicular
 
-We are given:
+Two vectors are perpendicular if and only if their dot product is equal to zero.
 
-$$
-u=(1,2,-1)
-$$
+The condition is:
 
-$$
-w=(2,-1,a)
-$$
+`u·v = 0`
 
-To make the vectors perpendicular, their dot product must be equal to zero.
+However, we calculated:
 
-The perpendicularity condition is:
+`u·v = -3`
 
-$$
-u\cdot w=0
-$$
+Since:
 
-Using the dot product formula:
+`-3 != 0`
 
-$$
-(1)(2)+(2)(-1)+(-1)(a)=0
-$$
+The vectors are not perpendicular.
+
+### 3. Finding the Value of a
+
+We are given another vector:
+
+`w=(2,-1,a)`
+
+We need to find the value of `a` such that `w` is perpendicular to `u`.
+
+For two vectors to be perpendicular, their dot product must be zero.
+
+Therefore:
+
+`u·w = 0`
+
+The vectors are:
+
+`u=(1,2,-1)`
+
+`w=(2,-1,a)`
+
+Calculating their dot product:
+
+`u·w = 1*2 + 2*(-1) + (-1)*a`
 
 Simplifying:
 
-$$
-2-2-a=0
-$$
-
-$$
--a=0
-$$
+`u·w = 2 - 2 - a`
 
 Therefore:
 
-$$
-\boxed{a=0}
-$$
+`u·w = -a`
 
-The required vector is:
+Applying the perpendicularity condition:
 
-$$
-\boxed{w=(2,-1,0)}
-$$
+`-a = 0`
 
-**3. Checking the Result**
+Solving for `a`:
 
-To verify our answer, we calculate the dot product of \(u\) and the new vector \(w\).
+`a = 0`
 
-We have:
+### 4. Checking the Result
 
-$$
-u=(1,2,-1)
-$$
+Substituting `a=0` into vector `w` gives:
 
-$$
-w=(2,-1,0)
-$$
+`w=(2,-1,0)`
 
-Calculating the dot product:
+Now we calculate the dot product again:
 
-$$
-u\cdot w=(1)(2)+(2)(-1)+(-1)(0)
-$$
+`u·w = 1*2 + 2*(-1) + (-1)*0`
 
-$$
-=2-2+0
-$$
+Simplifying:
 
-$$
-=0
-$$
+`u·w = 2 - 2 + 0`
 
 Therefore:
 
-$$
-\boxed{u\cdot w=0}
-$$
+`u·w = 0`
 
 Since the dot product is zero, the vectors are perpendicular.
 
-The result is verified.
+### 5. Final Results
 
-**4. Geometric Interpretation**
+**First part:**
 
-The dot product provides a way to determine the angle between two nonzero vectors.
+`u·v = -3`
 
-Its relationship with the angle is given by:
+The vectors `u` and `v` are not perpendicular.
 
-$$
-u\cdot v=\|u\|\|v\|\cos\theta
-$$
+**Second part:**
 
-When two vectors are perpendicular, the angle between them is \(90^\circ\).
+`a = 0`
 
-Since:
+The resulting vector is:
 
-$$
-\cos 90^\circ=0
-$$
+`w=(2,-1,0)`
 
-Their dot product must also be zero.
+And:
 
-In the second part of this exercise, we used this property to find the unknown component \(a\) and construct a vector perpendicular to \(u\).
+`u·w = 0`
 
----
+Therefore, the vectors `u` and `w` are perpendicular.
 
-### Final Results
+### Conclusion
 
-For the first pair of vectors:
+The dot product determines whether two vectors are perpendicular. If their dot product is zero, they are perpendicular. In this exercise, the first pair of vectors is not perpendicular, while choosing `a=0` makes the second pair perpendicular.
 
-$$
-\boxed{u\cdot v=-3}
-$$
-
-$$
-\boxed{\text{Not perpendicular}}
-$$
-
-For the second pair:
-
-$$
-\boxed{a=0}
-$$
-
-$$
-\boxed{w=(2,-1,0)}
-$$
-
-Verification:
-
-$$
-\boxed{u\cdot w=0}
-$$
-
-**Conclusion:** The dot product is useful for testing perpendicularity and finding unknown vector components. Two nonzero vectors are perpendicular exactly when their dot product is zero.
+The exercise is solved correctly.
