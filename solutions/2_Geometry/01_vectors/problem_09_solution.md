@@ -1,153 +1,69 @@
+# Exercise 9: Cross Product as a Perpendicular Direction
 
-## Exercise 9: Cross Product as a Perpendicular Direction
-
-### Question
+## Question
 
 Given the vectors:
 
-`u = (1, 2, 0)` and `v = (0, 1, 3)`
+$$u = (1, 2, 0) \qquad \text{and} \qquad v = (0, 1, 3)$$
 
-1. Compute `u × v`.
+1. Compute $u \times v$.
 2. Use dot products to check perpendicularity to both vectors.
-3. Compute `v × u`.
+3. Compute $v \times u$.
 4. Compare the results.
 
 ---
 
-### Solution
+## Solution
 
-### 1. Computing the Cross Product `u × v`
+### 1. Computing the Cross Product $u \times v$
 
-The cross product of two vectors in three-dimensional space produces a new vector that is perpendicular to both original vectors.
+Using the cross product formula for $u = (u_1, u_2, u_3)$ and $v = (v_1, v_2, v_3)$:
 
-The cross product formula is:
+$$u \times v = (u_2v_3 - u_3v_2,\ u_3v_1 - u_1v_3,\ u_1v_2 - u_2v_1)$$
 
-`u × v = (u2*v3 - u3*v2, u3*v1 - u1*v3, u1*v2 - u2*v1)`
+Substituting $u = (1, 2, 0)$ and $v = (0, 1, 3)$:
 
-Given:
-
-`u = (1, 2, 0)` and `v = (0, 1, 3)`
-
-Substituting the components:
-
-`u × v = (2*3 - 0*1, 0*0 - 1*3, 1*1 - 2*0)`
-
-Calculating each component:
-
-`u × v = (6, -3, 1)`
-
-Therefore:
-
-`u × v = (6, -3, 1)`
+$$u \times v = (2 \cdot 3 - 0 \cdot 1,\ 0 \cdot 0 - 1 \cdot 3,\ 1 \cdot 1 - 2 \cdot 0) = (6, -3, 1)$$
 
 ### 2. Checking Perpendicularity Using Dot Products
 
-To verify that the cross product is perpendicular to both original vectors, we calculate two dot products.
+A vector is perpendicular to another if their dot product is zero.
 
-A vector is perpendicular to another vector if their dot product is zero.
+- **Check against $u = (1, 2, 0)$:**
 
-First, check perpendicularity to `u`.
+$$(u \times v) \cdot u = 6 \cdot 1 + (-3) \cdot 2 + 1 \cdot 0 = 6 - 6 + 0 = 0$$
 
-We have:
+- **Check against $v = (0, 1, 3)$:**
 
-`u = (1, 2, 0)`
+$$(u \times v) \cdot v = 6 \cdot 0 + (-3) \cdot 1 + 1 \cdot 3 = 0 - 3 + 3 = 0$$
 
-`u × v = (6, -3, 1)`
+Both dot products equal zero, confirming that $u \times v$ is perpendicular to both $u$ and $v$.
 
-Calculate the dot product:
+### 3. Computing the Cross Product $v \times u$
 
-`(u × v) · u = 6*1 + (-3)*2 + 1*0`
+Reversing the order of the vectors:
 
-Simplifying:
-
-`(u × v) · u = 6 - 6 + 0`
-
-`(u × v) · u = 0`
-
-Therefore, the cross product is perpendicular to `u`.
-
-Now, check perpendicularity to `v`.
-
-We have:
-
-`v = (0, 1, 3)`
-
-Calculate the dot product:
-
-`(u × v) · v = 6*0 + (-3)*1 + 1*3`
-
-Simplifying:
-
-`(u × v) · v = 0 - 3 + 3`
-
-`(u × v) · v = 0`
-
-The cross product is also perpendicular to `v`.
-
-Both checks confirm the perpendicularity of the result.
-
-### 3. Computing the Cross Product `v × u`
-
-Now we reverse the order of the original vectors.
-
-Using the cross product formula:
-
-`v × u = (v2*u3 - v3*u2, v3*u1 - v1*u3, v1*u2 - v2*u1)`
+$$v \times u = (v_2u_3 - v_3u_2,\ v_3u_1 - v_1u_3,\ v_1u_2 - v_2u_1)$$
 
 Substituting the components:
 
-`v × u = (1*0 - 3*2, 3*1 - 0*0, 0*2 - 1*1)`
-
-Calculating each component:
-
-`v × u = (-6, 3, -1)`
-
-Therefore:
-
-`v × u = (-6, 3, -1)`
+$$v \times u = (1 \cdot 0 - 3 \cdot 2,\ 3 \cdot 1 - 0 \cdot 0,\ 0 \cdot 2 - 1 \cdot 1) = (-6, 3, -1)$$
 
 ### 4. Comparing the Results
 
-From our calculations:
+Comparing $u \times v = (6, -3, 1)$ and $v \times u = (-6, 3, -1)$, every component has the opposite sign:
 
-`u × v = (6, -3, 1)`
+$$v \times u = -(u \times v)$$
 
-`v × u = (-6, 3, -1)`
-
-Comparing the two results, we can see that every component has the opposite sign.
-
-Therefore:
-
-`v × u = -(u × v)`
-
-This demonstrates that the cross product is anti-commutative.
-
-Changing the order of the vectors reverses the direction of the resulting vector, but its length remains unchanged.
-
-Geometrically, both results are perpendicular to the same two original vectors, but they point in opposite directions.
+This demonstrates that the cross product is **anti-commutative**: reversing the order of the vectors preserves the magnitude ($\|v \times u\| = \|u \times v\| = \sqrt{46}$) and perpendicularity to the plane spanned by $u$ and $v$, but reverses the orientation (points in the opposite direction).
 
 ---
 
-### Final Results
+## Final Results
 
-**Cross product:**
+- **Cross product $u \times v$:** $(6, -3, 1)$
+- **Perpendicularity checks:** $(u \times v) \cdot u = 0$ and $(u \times v) \cdot v = 0$
+- **Reversed cross product $v \times u$:** $(-6, 3, -1)$
+- **Comparison:** $v \times u = -(u \times v)$
 
-`u × v = (6, -3, 1)`
-
-**Perpendicularity checks:**
-
-`(u × v) · u = 0`
-
-`(u × v) · v = 0`
-
-**Reversed cross product:**
-
-`v × u = (-6, 3, -1)`
-
-**Comparison:**
-
-`v × u = -(u × v)`
-
-**Conclusion:**
-
-The cross product produces a vector perpendicular to both original vectors. Reversing the order of the vectors changes the direction of the result but preserves its magnitude. This shows that the cross product is anti-commutative.
+**Conclusion:** The cross product produces a vector perpendicular to both original vectors, and reversing the order of multiplication reverses the direction of the resulting vector while keeping its length unchanged.
