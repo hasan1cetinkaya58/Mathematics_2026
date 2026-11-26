@@ -1,168 +1,109 @@
-
 # Exercise 15: Comparing Directions Using the Cosine of the Angle
 
 ## Question
 
 Given the vectors:
 
-`a = (1, 2, 1)`, `b = (2, 4, 2)`, and `c = (2, 0, 3)`.
+$$a = (1, 2, 1), \qquad b = (2, 4, 2), \qquad c = (2, 0, 3)$$
 
 For each pair of vectors, compute the cosine of the angle using the formula:
 
-`cos(theta) = (u · v) / (|u| |v|)`
+$$\cos\theta = \frac{u \cdot v}{\|u\|\|v\|}$$
 
 1. Compute the cosine of the angle for each pair of vectors.
 2. Order the pairs by increasing angle between the vectors.
-3. Explain why for vectors `a` and `b`, the cosine value is `1` even though the vectors have different lengths.
+3. Explain why for vectors $a$ and $b$, the cosine value is $1$ even though the vectors have different lengths.
 
 ## Solution
 
 ### 1. Calculating the Dot Products
 
-We have three vectors, so we need to examine three pairs:
+We have three vectors, so we examine three pairs: $(a, b)$, $(a, c)$, and $(b, c)$.
 
-- Pair 1: `a` and `b`
-- Pair 2: `a` and `c`
-- Pair 3: `b` and `c`
+- **For vectors $a$ and $b$:**
 
-First, calculate their dot products.
+$$a \cdot b = (1)(2) + (2)(4) + (1)(2) = 2 + 8 + 2 = 12$$
 
-**For vectors `a` and `b`:**
+- **For vectors $a$ and $c$:**
 
-`a · b = (1)(2) + (2)(4) + (1)(2)`
+$$a \cdot c = (1)(2) + (2)(0) + (1)(3) = 2 + 0 + 3 = 5$$
 
-`a · b = 2 + 8 + 2 = 12`
+- **For vectors $b$ and $c$:**
 
-**For vectors `a` and `c`:**
-
-`a · c = (1)(2) + (2)(0) + (1)(3)`
-
-`a · c = 2 + 0 + 3 = 5`
-
-**For vectors `b` and `c`:**
-
-`b · c = (2)(2) + (4)(0) + (2)(3)`
-
-`b · c = 4 + 0 + 6 = 10`
+$$b \cdot c = (2)(2) + (4)(0) + (2)(3) = 4 + 0 + 6 = 10$$
 
 ### 2. Calculating the Vector Lengths
 
-We use the Euclidean length formula:
+Using the Euclidean length formula $\|v\| = \sqrt{x^2 + y^2 + z^2}$:
 
-`|v| = sqrt(x^2 + y^2 + z^2)`
+- **Length of vector $a$:**
 
-**Length of vector `a`:**
+$$\|a\| = \sqrt{1^2 + 2^2 + 1^2} = \sqrt{1 + 4 + 1} = \sqrt{6}$$
 
-`|a| = sqrt(1^2 + 2^2 + 1^2)`
+- **Length of vector $b$:**
 
-`|a| = sqrt(1 + 4 + 1) = sqrt(6)`
+$$\|b\| = \sqrt{2^2 + 4^2 + 2^2} = \sqrt{4 + 16 + 4} = \sqrt{24} = 2\sqrt{6}$$
 
-**Length of vector `b`:**
+- **Length of vector $c$:**
 
-`|b| = sqrt(2^2 + 4^2 + 2^2)`
-
-`|b| = sqrt(4 + 16 + 4) = sqrt(24)`
-
-`|b| = 2sqrt(6)`
-
-**Length of vector `c`:**
-
-`|c| = sqrt(2^2 + 0^2 + 3^2)`
-
-`|c| = sqrt(4 + 0 + 9) = sqrt(13)`
+$$\|c\| = \sqrt{2^2 + 0^2 + 3^2} = \sqrt{4 + 0 + 9} = \sqrt{13}$$
 
 ### 3. Calculating the Cosine for Each Pair
 
-We use the formula:
+Using $\cos\theta = \dfrac{u \cdot v}{\|u\|\|v\|}$:
 
-`cos(theta) = (u · v) / (|u| |v|)`
+- **Pair 1: Vectors $a$ and $b$**
 
-**Pair 1: Vectors `a` and `b`**
+$$\cos\theta_{ab} = \frac{12}{\sqrt{6} \cdot 2\sqrt{6}} = \frac{12}{12} = 1$$
 
-Substitute the calculated values:
+Since $\cos 0^\circ = 1$, we obtain:
 
-`cos(theta_ab) = 12 / (sqrt(6) * 2sqrt(6))`
+$$\theta_{ab} = 0^\circ$$
 
-`cos(theta_ab) = 12 / 12`
+- **Pair 2: Vectors $a$ and $c$**
 
-`cos(theta_ab) = 1`
+$$\cos\theta_{ac} = \frac{5}{\sqrt{6} \cdot \sqrt{13}} = \frac{5}{\sqrt{78}} \approx 0.5661$$
 
-Since the cosine of zero degrees is 1:
+Taking the inverse cosine:
 
-`theta_ab = 0 degrees`
+$$\theta_{ac} = \arccos\left(\frac{5}{\sqrt{78}}\right) \approx 55.5^\circ$$
 
-**Pair 2: Vectors `a` and `c`**
+- **Pair 3: Vectors $b$ and $c$**
 
-`cos(theta_ac) = 5 / (sqrt(6) * sqrt(13))`
+$$\cos\theta_{bc} = \frac{10}{2\sqrt{6} \cdot \sqrt{13}} = \frac{10}{2\sqrt{78}} = \frac{5}{\sqrt{78}} \approx 0.5661$$
 
-`cos(theta_ac) = 5 / sqrt(78)`
+Taking the inverse cosine:
 
-`cos(theta_ac) ≈ 0.5661`
-
-Therefore:
-
-`theta_ac ≈ 55.4 degrees`
-
-**Pair 3: Vectors `b` and `c`**
-
-`cos(theta_bc) = 10 / (2sqrt(6) * sqrt(13))`
-
-`cos(theta_bc) = 10 / (2sqrt(78))`
-
-`cos(theta_bc) = 5 / sqrt(78)`
-
-`cos(theta_bc) ≈ 0.5661`
-
-Therefore:
-
-`theta_bc ≈ 55.4 degrees`
+$$\theta_{bc} = \arccos\left(\frac{5}{\sqrt{78}}\right) \approx 55.5^\circ$$
 
 ### 4. Ordering the Pairs by Increasing Angle
 
 The calculated angles are:
 
-- Pair `(a, b)`: `0 degrees`
-- Pair `(a, c)`: approximately `55.4 degrees`
-- Pair `(b, c)`: approximately `55.4 degrees`
+- Pair $(a, b)$: $\theta_{ab} = 0^\circ$
+- Pair $(a, c)$: $\theta_{ac} \approx 55.5^\circ$
+- Pair $(b, c)$: $\theta_{bc} \approx 55.5^\circ$
 
 Therefore, the increasing order is:
 
-`theta_ab < theta_ac = theta_bc`
+$$\theta_{ab} < \theta_{ac} = \theta_{bc}$$
 
-The pairs `(a, c)` and `(b, c)` have equal angles because vectors `a` and `b` point in the same direction.
+The pairs $(a, c)$ and $(b, c)$ have equal angles because $a$ and $b$ point in the same direction.
 
-### 5. Geometric Explanation: Why Is the Cosine Equal to 1?
+### 5. Geometric Explanation: Why Is the Cosine Equal to $1$?
 
-Notice that vector `b` is exactly twice vector `a`:
+Notice that $b$ is a positive scalar multiple of $a$:
 
-`b = 2a`
+$$b = 2a \iff (2, 4, 2) = 2(1, 2, 1)$$
 
-`(2, 4, 2) = 2(1, 2, 1)`
-
-This means that the two vectors have the same direction, but different lengths.
-
-Their angle is zero degrees:
-
-`theta_ab = 0 degrees`
-
-Since:
-
-`cos(0 degrees) = 1`
-
-The cosine value is 1 even though the vector lengths are different.
-
-This demonstrates that the cosine formula measures the angle between vectors, not their lengths.
+This means $a$ and $b$ point in the exact same direction while having different magnitudes ($\|b\| = 2\|a\|$). Consequently, the angle between them is $\theta_{ab} = 0^\circ$, and since $\cos 0^\circ = 1$, their cosine value equals $1$. Because the cosine formula normalizes each vector by its length ($\frac{u}{\|u\|}$ and $\frac{v}{\|v\|}$), it depends solely on direction, not magnitude.
 
 ## Final Results
 
 | Vector Pair | Cosine Value | Angle |
 |---|---:|---:|
-| `(a, b)` | `1` | `0 degrees` |
-| `(a, c)` | `5/sqrt(78)` | `55.5 degrees` |
-| `(b, c)` | `5/sqrt(78)` | `55.5 degrees` |
+| $(a, b)$ | $1$ | $0^\circ$ |
+| $(a, c)$ | $\dfrac{5}{\sqrt{78}} \approx 0.5661$ | $\approx 55.5^\circ$ |
+| $(b, c)$ | $\dfrac{5}{\sqrt{78}} \approx 0.5661$ | $\approx 55.5^\circ$ |
 
-**Conclusion:**
-
-The dot product and vector lengths together allow us to determine the angle between two vectors.
-
-Vectors with different lengths can have the same direction. In this exercise, vectors `a` and `b` are parallel and point in the same direction, which is why their cosine value is exactly 1.
+**Conclusion:** The dot product and vector lengths together determine the angle between two vectors. Vectors with different lengths can share the same direction; here, $a$ and $b$ are parallel with the same orientation, so $\cos\theta_{ab} = 1$.
