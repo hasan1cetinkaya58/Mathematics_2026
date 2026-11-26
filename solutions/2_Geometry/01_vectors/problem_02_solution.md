@@ -1,13 +1,12 @@
-
 # Exercise 2: Distance as the Length of a Vector
 
 ## Question
 
-The given points are `A=(1,2,3)` and `B=(4,-2,6)`.
+The given points are $A=(1,2,3)$ and $B=(4,-2,6)$.
 
 **Required:**
 
-1. Construct the vector `AB`.
+1. Construct the vector $\overrightarrow{AB}$.
 2. Compute its length.
 3. Compute the distance between the points using the coordinate formula.
 4. Explain why both calculations give the same result.
@@ -16,126 +15,68 @@ The given points are `A=(1,2,3)` and `B=(4,-2,6)`.
 
 ## Solution
 
-### 1. Constructing the Vector AB
+### 1. Constructing the Vector $\overrightarrow{AB}$
 
-To construct the vector from point A to point B, we subtract the coordinates of A from the corresponding coordinates of B.
+To construct the vector from point $A$ to point $B$, we subtract the coordinates of $A$ from the corresponding coordinates of $B$:
 
-The formula is:
-
-`AB = B - A`
+$$\overrightarrow{AB} = B - A$$
 
 Substituting the given coordinates:
 
-`AB = (4,-2,6) - (1,2,3)`
-
-Subtracting the corresponding components:
-
-`AB = (4-1,-2-2,6-3)`
+$$\overrightarrow{AB} = (4,-2,6) - (1,2,3) = (4-1,-2-2,6-3)$$
 
 Therefore:
 
-`AB = (3,-4,3)`
+$$\overrightarrow{AB} = (3,-4,3)$$
 
 ### 2. Computing the Length of the Vector
 
-The length of a three-dimensional vector is calculated using the following formula:
+The length of a three-dimensional vector is calculated using the formula:
 
-`|AB| = sqrt(x^2 + y^2 + z^2)`
+$$\|\overrightarrow{AB}\| = \sqrt{x^2 + y^2 + z^2}$$
 
-We have already calculated the vector:
+Substituting the components of $\overrightarrow{AB} = (3,-4,3)$ into the formula:
 
-`AB = (3,-4,3)`
-
-Substituting its components into the formula:
-
-`|AB| = sqrt(3^2 + (-4)^2 + 3^2)`
-
-Calculating the squares:
-
-`|AB| = sqrt(9 + 16 + 9)`
-
-Adding the values:
-
-`|AB| = sqrt(34)`
+$$\|\overrightarrow{AB}\| = \sqrt{3^2 + (-4)^2 + 3^2} = \sqrt{9 + 16 + 9} = \sqrt{34}$$
 
 Therefore, the length of the vector is:
 
-`|AB| = sqrt(34)`
+$$\|\overrightarrow{AB}\| = \sqrt{34}$$
 
 ### 3. Computing the Distance Using the Coordinate Formula
 
 The distance between two points in three-dimensional space is calculated using the coordinate distance formula:
 
-`d(A,B) = sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)`
+$$d(A,B) = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}$$
 
-The given points are:
+Substituting $A = (1,2,3)$ and $B = (4,-2,6)$ into the formula:
 
-`A = (1,2,3)`
-
-`B = (4,-2,6)`
-
-Substituting the coordinates into the formula:
-
-`d(A,B) = sqrt((4-1)^2 + (-2-2)^2 + (6-3)^2)`
-
-Calculating the differences:
-
-`d(A,B) = sqrt(3^2 + (-4)^2 + 3^2)`
-
-Calculating the squares:
-
-`d(A,B) = sqrt(9 + 16 + 9)`
-
-Adding the values:
-
-`d(A,B) = sqrt(34)`
+$$d(A,B) = \sqrt{(4-1)^2 + (-2-2)^2 + (6-3)^2} = \sqrt{3^2 + (-4)^2 + 3^2} = \sqrt{9 + 16 + 9} = \sqrt{34}$$
 
 Therefore, the distance between the two points is:
 
-`d(A,B) = sqrt(34)`
+$$d(A,B) = \sqrt{34}$$
 
 ### 4. Explaining Why Both Calculations Give the Same Result
 
-Both calculations give the same result because the vector `AB` represents the displacement from point A to point B.
+Both calculations give the same result because the vector $\overrightarrow{AB}$ represents the displacement from point $A$ to point $B$:
 
-The vector is obtained by subtracting the coordinates of A from the coordinates of B:
+$$\overrightarrow{AB} = B - A = (3,-4,3)$$
 
-`AB = B - A = (3,-4,3)`
+The coordinate distance formula uses the exact same coordinate differences:
 
-The length of this vector is calculated using the three-dimensional vector length formula.
-
-The coordinate distance formula uses exactly the same coordinate differences:
-
-`(4-1,-2-2,6-3) = (3,-4,3)`
-
-Therefore, both methods calculate the length of the same displacement vector.
+$$(4-1,-2-2,6-3) = (3,-4,3)$$
 
 We can verify that:
 
-`|AB| = d(A,B)`
-
-`|AB| = sqrt(34)`
-
-`d(A,B) = sqrt(34)`
+$$\|\overrightarrow{AB}\| = d(A,B) = \sqrt{34}$$
 
 Thus, both calculations give the same result because the distance between two points is equal to the length of the vector connecting them.
 
-### Final Results
+## Final Results
 
-**Vector AB:**
+- **Vector $\overrightarrow{AB}$:** $\overrightarrow{AB} = (3,-4,3)$
+- **Length of the vector:** $\|\overrightarrow{AB}\| = \sqrt{34}$
+- **Distance between points $A$ and $B$:** $d(A,B) = \sqrt{34}$
 
-`AB = (3,-4,3)`
-
-**Length of the vector:**
-
-`|AB| = sqrt(34)`
-
-**Distance between points A and B:**
-
-`d(A,B) = sqrt(34)`
-
-**Conclusion:**
-
-The length of the vector and the distance between the two points are equal. Both methods give the result `sqrt(34)`.
-
-The exercise is solved correctly.
+**Conclusion:** The length of the vector and the distance between the two points are equal. Both methods give the result $\sqrt{34}$.
