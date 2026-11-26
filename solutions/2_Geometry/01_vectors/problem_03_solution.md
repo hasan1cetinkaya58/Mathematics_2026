@@ -1,173 +1,168 @@
-## Exercise 3: Vector Normalization
 
-### Question
+# Exercise 3: Vector Normalization
 
-Given the vector:
+## Question
 
-$$
-v=(3,4)
-$$
+For `v = (3, 4)`, find a unit vector `e` with the same direction and orientation.
 
-1. Find a unit vector \(e\) with the same direction and orientation.
-2. Check that \(\|e\|=1\).
-3. Reconstruct \(v\) in the form \(v=\|v\|e\).
-4. Explain what changes during normalization and what remains unchanged.
+Check that `|e| = 1`, reconstruct `v` in the form `v = |v|e`, and explain what changes during normalization and what remains unchanged.
 
----
+## Solution
 
-### Solution
+### 1. Finding the Length of the Vector
 
-**1. Finding the Unit Vector**
+The given vector is:
 
-A unit vector is a vector whose length (magnitude) is equal to 1.
+`v = (3, 4)`
 
-To find a unit vector with the same direction and orientation as \(v\), we divide the original vector by its length.
+The length of a two-dimensional vector is calculated using the formula:
+
+`|v| = sqrt(x^2 + y^2)`
+
+Substituting the coordinates:
+
+`|v| = sqrt(3^2 + 4^2)`
+
+Calculating the squares:
+
+`|v| = sqrt(9 + 16)`
+
+Adding the values:
+
+`|v| = sqrt(25)`
+
+Therefore:
+
+`|v| = 5`
+
+### 2. Finding the Unit Vector
+
+To normalize a vector, we divide each component of the vector by its length.
 
 The normalization formula is:
 
-$$
-e=\frac{v}{\|v\|}
-$$
+`e = v / |v|`
 
-First, calculate the length of the given vector:
+Substituting the given vector and its length:
 
-$$
-v=(3,4)
-$$
+`e = (3, 4) / 5`
 
-$$
-\|v\|=\sqrt{3^2+4^2}
-$$
+Dividing each component by 5:
 
-$$
-=\sqrt{9+16}
-$$
+`e = (3/5, 4/5)`
 
-$$
-=\sqrt{25}=5
-$$
+Therefore, the unit vector is:
 
-Now divide each component of \(v\) by its length:
+`e = (3/5, 4/5)`
 
-$$
-e=\frac{(3,4)}{5}
-$$
+### 3. Checking That the Unit Vector Has Length 1
 
-Therefore:
+A unit vector must have a length equal to 1.
 
-$$
-\boxed{e=\left(\frac{3}{5},\frac{4}{5}\right)}
-$$
+We use the length formula:
 
-**2. Checking That the Unit Vector Has Length 1**
+`|e| = sqrt(x^2 + y^2)`
 
-To verify that \(e\) is a unit vector, we calculate its magnitude.
+Substituting the components of the unit vector:
 
-$$
-\|e\|=\sqrt{\left(\frac{3}{5}\right)^2+
-\left(\frac{4}{5}\right)^2}
-$$
+`|e| = sqrt((3/5)^2 + (4/5)^2)`
 
-Squaring each component:
+Calculating the squares:
 
-$$
-=\sqrt{\frac{9}{25}+\frac{16}{25}}
-$$
+`|e| = sqrt(9/25 + 16/25)`
 
-$$
-=\sqrt{\frac{25}{25}}
-$$
+Adding the fractions:
 
-$$
-=\sqrt{1}
-$$
+`|e| = sqrt(25/25)`
+
+Simplifying:
+
+`|e| = sqrt(1)`
 
 Therefore:
 
-$$
-\boxed{\|e\|=1}
-$$
+`|e| = 1`
 
-The result confirms that \(e\) is a unit vector.
+This confirms that `e` is a unit vector.
 
-**3. Reconstructing the Original Vector**
+### 4. Reconstructing the Original Vector
 
-We need to express the original vector in the form:
+We need to verify that the original vector can be reconstructed using:
 
-$$
-v=\|v\|e
-$$
+`v = |v|e`
 
 We already know that:
 
-$$
-\|v\|=5
-$$
+`|v| = 5`
 
-and
+And:
 
-$$
-e=\left(\frac{3}{5},\frac{4}{5}\right)
-$$
+`e = (3/5, 4/5)`
 
 Substituting these values:
 
-$$
-v=5\left(\frac{3}{5},\frac{4}{5}\right)
-$$
+`v = 5(3/5, 4/5)`
 
 Multiplying each component by 5:
 
-$$
-v=\left(5\cdot\frac{3}{5},
-5\cdot\frac{4}{5}\right)
-$$
+`v = (5 * 3/5, 5 * 4/5)`
 
-$$
-v=(3,4)
-$$
+Simplifying:
+
+`v = (3, 4)`
+
+This is exactly the original vector.
 
 Therefore:
 
-$$
-\boxed{v=5e=(3,4)}
-$$
+`v = |v|e`
 
-This confirms that the original vector can be reconstructed by multiplying its unit vector by its magnitude.
+### 5. Explaining What Changes and What Remains Unchanged
 
-**4. Geometric Interpretation of Normalization**
+During normalization, the length of the vector changes.
 
-Normalization separates the direction of a vector from its magnitude.
+The original vector has length:
 
-When a vector is normalized:
+`|v| = 5`
 
-- Its magnitude changes to 1.
-- Its direction remains unchanged.
-- Its orientation remains unchanged.
-- Its components are scaled proportionally.
+The normalized vector has length:
 
-In this exercise, the original vector has length 5. After normalization, its length becomes 1, but it still points in exactly the same direction.
+`|e| = 1`
 
-Geometrically, normalization shortens the vector without rotating or reversing it.
+Therefore, normalization changes the magnitude of the vector to 1.
 
----
+However, the direction and orientation remain unchanged because both components are divided by the same positive number.
 
-### Final Results
+The original vector and the unit vector point in the same direction.
 
-$$
-\boxed{\|v\|=5}
-$$
+Thus:
+- **What changes:** The magnitude changes from 5 to 1.
+- **What remains unchanged:** The direction and orientation of the vector.
 
-$$
-\boxed{e=\left(\frac{3}{5},\frac{4}{5}\right)}
-$$
+## Final Results
 
-$$
-\boxed{\|e\|=1}
-$$
+Original vector:
 
-$$
-\boxed{v=5e=(3,4)}
-$$
+`v = (3, 4)`
 
-**Conclusion:** Normalization changes the magnitude of a nonzero vector to 1 while preserving its direction and orientation. It allows us to represent a vector as the product of its length and a unit vector.
+Length of the original vector:
+
+`|v| = 5`
+
+Normalized unit vector:
+
+`e = (3/5, 4/5)`
+
+Length of the unit vector:
+
+`|e| = 1`
+
+Reconstructed original vector:
+
+`v = 5(3/5, 4/5) = (3, 4)`
+
+**Conclusion:**
+
+The normalized vector has length 1 while preserving the original vector's direction and orientation. Multiplying the unit vector by the original magnitude reconstructs the original vector exactly.
+
+The exercise is solved correctly.
