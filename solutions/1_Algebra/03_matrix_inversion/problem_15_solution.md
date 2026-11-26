@@ -58,7 +58,9 @@ $$
 x = \begin{bmatrix} \dfrac{13}{5} \\ \dfrac{9}{5} \end{bmatrix}
 $$
 
----### Step 2. Method 2 — Solve Using Gaussian Elimination
+---
+
+### Step 2. Method 2 — Solve Using Gaussian Elimination
 
 We write the augmented matrix $[A \mid b]$:
 
