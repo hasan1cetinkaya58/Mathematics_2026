@@ -3,7 +3,7 @@
 
 ## Question
 
-The points are `A=(1,2,3)` and `B=(4,-2,6)`.
+The given points are `A=(1,2,3)` and `B=(4,-2,6)`.
 
 **Required:**
 
@@ -12,7 +12,7 @@ The points are `A=(1,2,3)` and `B=(4,-2,6)`.
 3. Compute the distance between the points using the coordinate formula.
 4. Explain why both calculations give the same result.
 
-> **Why this exercise:** shows that the point-distance formula comes directly from the length of a difference vector.
+> **Why this exercise:** This exercise shows that the point-distance formula comes directly from the length of a difference vector.
 
 ## Solution
 
@@ -121,8 +121,6 @@ We can verify that:
 Thus, both calculations give the same result because the distance between two points is equal to the length of the vector connecting them.
 
 ### Final Results
-
-The calculated results are:
 
 **Vector AB:**
 
