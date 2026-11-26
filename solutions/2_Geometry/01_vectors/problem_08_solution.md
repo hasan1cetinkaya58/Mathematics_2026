@@ -1,154 +1,68 @@
+# Exercise 8: Linear Combination and Checking the Result
 
-## Exercise 8: Linear Combination and Checking the Result
-
-### Question
+## Question
 
 Given the vectors:
 
-- `w = (5, 1)`
-- `u = (1, 1)`
-- `v = (2, -1)`
+- $w = (5, 1)$
+- $u = (1, 1)$
+- $v = (2, -1)$
 
-Check whether `w` can be written as:
+Check whether $w$ can be written as:
 
-`w = au + bv`
+$$w = au + bv$$
 
 If so:
 
-1. Find the values of `a` and `b`.
-2. Reconstruct `w` using these coefficients.
+1. Find the values of $a$ and $b$.
+2. Reconstruct $w$ using these coefficients.
 3. Explain the geometric meaning of the existence of such coefficients.
 
 ---
 
-### Solution
+## Solution
 
-### 1. Finding the Coefficients `a` and `b`
+### 1. Finding the Coefficients $a$ and $b$
 
-We want to determine whether `w` can be expressed as a linear combination of `u` and `v`.
+Substitute the given vectors into $w = au + bv$:
 
-The given equation is:
+$$(5, 1) = a(1, 1) + b(2, -1) = (a + 2b,\ a - b)$$
 
-`w = au + bv`
+Equating corresponding components gives the linear system:
 
-Substituting the given vectors:
+$$a + 2b = 5$$
 
-`(5, 1) = a(1, 1) + b(2, -1)`
+$$a - b = 1$$
 
-First, multiply each vector by its corresponding scalar:
+Subtract the second equation from the first:
 
-`(5, 1) = (a, a) + (2b, -b)`
+$$(a + 2b) - (a - b) = 5 - 1 \implies 3b = 4 \implies b = \frac{4}{3}$$
 
-Adding the corresponding components gives:
+Substitute $b = \frac{4}{3}$ into $a - b = 1$:
 
-`(5, 1) = (a + 2b, a - b)`
+$$a - \frac{4}{3} = 1 \implies a = 1 + \frac{4}{3} = \frac{7}{3}$$
 
-By comparing the corresponding components, we obtain the following system of equations:
-
-`a + 2b = 5`
-
-`a - b = 1`
-
-Now solve the system.
-
-Subtract the second equation from the first equation:
-
-`(a + 2b) - (a - b) = 5 - 1`
-
-Simplifying:
-
-`a + 2b - a + b = 4`
-
-`3b = 4`
-
-Therefore:
-
-`b = 4/3`
-
-Now substitute this value into the second equation:
-
-`a - 4/3 = 1`
-
-Adding `4/3` to both sides:
-
-`a = 1 + 4/3`
-
-Therefore:
-
-`a = 7/3`
-
-The required coefficients are:
-
-`a = 7/3` and `b = 4/3`
+Thus, the coefficients are $a = \frac{7}{3}$ and $b = \frac{4}{3}$.
 
 ### 2. Reconstructing the Original Vector
 
-To verify our solution, substitute the calculated coefficients into the original linear combination.
+Substitute $a = \frac{7}{3}$ and $b = \frac{4}{3}$ into $w = au + bv$:
 
-We have:
+$$w = \frac{7}{3}(1, 1) + \frac{4}{3}(2, -1) = \left(\frac{7}{3}, \frac{7}{3}\right) + \left(\frac{8}{3}, -\frac{4}{3}\right) = \left(\frac{15}{3}, \frac{3}{3}\right) = (5, 1)$$
 
-`w = au + bv`
-
-Substituting the values:
-
-`w = (7/3)(1, 1) + (4/3)(2, -1)`
-
-Multiply each vector by its coefficient:
-
-`w = (7/3, 7/3) + (8/3, -4/3)`
-
-Add the corresponding components:
-
-`w = (7/3 + 8/3, 7/3 - 4/3)`
-
-Simplifying:
-
-`w = (15/3, 3/3)`
-
-Therefore:
-
-`w = (5, 1)`
-
-This is exactly the original vector, so our calculations are correct.
+This matches the original vector $w = (5, 1)$, confirming the result.
 
 ### 3. Geometric Interpretation
 
-A linear combination means creating a new vector by scaling and adding other vectors.
+Geometrically, $w = \frac{7}{3}u + \frac{4}{3}v$ means that $w$ is reached by scaling $u$ by a factor of $\frac{7}{3}$, scaling $v$ by a factor of $\frac{4}{3}$, and adding the two scaled vectors via the parallelogram rule.
 
-In this exercise:
-
-- Vector `u` is scaled by `7/3`.
-- Vector `v` is scaled by `4/3`.
-- The two resulting vectors are added together to produce `w`.
-
-Geometrically, the coefficients determine how far and in which direction each vector contributes to the resulting vector.
-
-Since `u = (1, 1)` and `v = (2, -1)` are not scalar multiples of each other, they point in different directions.
-
-Therefore, they span the entire two-dimensional plane `R^2`.
-
-This means that every vector in `R^2`, including `w = (5, 1)`, can be represented as a linear combination of `u` and `v`.
-
-In this case, the coefficients are also unique because the two given vectors are linearly independent.
+Because $u = (1, 1)$ and $v = (2, -1)$ are not scalar multiples of one another, they point in two independent directions and span the entire plane $\mathbb{R}^2$. Consequently, every vector in $\mathbb{R}^2$—including $w = (5, 1)$—can be uniquely written as a linear combination of $u$ and $v$.
 
 ---
 
-### Final Results
+## Final Results
 
-**Coefficients:**
-
-`a = 7/3` and `b = 4/3`
-
-**Linear combination:**
-
-`w = (7/3)u + (4/3)v`
-
-**Verification:**
-
-`(5, 1) = (5, 1)`
-
-**Final conclusion:**
-
-Yes, `w` can be expressed as a linear combination of `u` and `v`.
-
-Since `u` and `v` are linearly independent and span `R^2`, the vector `w` can be represented uniquely using the coefficients `a = 7/3` and `b = 4/3`.
+- **Coefficients:** $a = \frac{7}{3}$ and $b = \frac{4}{3}$
+- **Linear combination:** $w = \frac{7}{3}u + \frac{4}{3}v$
+- **Verification:** $\frac{7}{3}(1,1) + \frac{4}{3}(2,-1) = (5,1)$
+- **Conclusion:** Yes, $w$ can be uniquely expressed as a linear combination of $u$ and $v$ because $u$ and $v$ are linearly independent and span $\mathbb{R}^2$.
